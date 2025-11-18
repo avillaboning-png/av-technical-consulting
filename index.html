@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AV Technical Consulting</title>
+  <title>AV Technical Consulting – Chemical Risk & Occupational Safety</title>
+  <meta name="description" content="AV Technical Consulting. Engineering-based consulting focused on chemical risk management, mechanical hazard control and occupational safety programs for industrial, agrochemical, educational, laboratory and logistics operations.">
   <style>
     :root {
       --primary-dark: #003e5c;
       --primary-teal: #0b6e6f;
-      --primary-gradient-start: #004466;
+      --primary-gradient-start: #003a57;
       --primary-gradient-end: #4fa3c6;
       --text-main: #ffffff;
       --text-body: #003e5c;
@@ -30,46 +31,60 @@
       line-height: 1.5;
     }
 
-    a { color: inherit; }
+    a { color: inherit; text-decoration: none; }
 
     /* HERO */
     header.hero {
-      background: linear-gradient(90deg, var(--primary-gradient-start), var(--primary-gradient-end));
+      position: relative;
+      padding: 52px 32px 64px;
       color: var(--text-main);
-      padding: 48px 32px 56px;
+      background-image:
+        linear-gradient(120deg, rgba(0,58,87,0.96), rgba(11,110,111,0.90)),
+        url("hero-rig-field.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    header.hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
     }
 
     .hero-inner {
+      position: relative;
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 40px;
-      align-items: center;
+      z-index: 1;
     }
 
     .brand-label {
       font-size: 0.9rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      opacity: 0.85;
+      opacity: 0.9;
       margin-bottom: 10px;
     }
 
     h1.hero-title {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       line-height: 1.2;
       margin-bottom: 18px;
+      max-width: 700px;
     }
 
     .hero-subtitle {
-      font-size: 1rem;
-      max-width: 640px;
-      opacity: 0.9;
+      font-size: 1.02rem;
+      max-width: 720px;
+      opacity: 0.96;
     }
 
     .hero-cta-wrap {
-      margin-top: 28px;
+      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
@@ -80,11 +95,10 @@
       padding: 14px 30px;
       background: #ffffff;
       color: var(--primary-dark);
-      text-decoration: none;
       border-radius: 999px;
       font-weight: bold;
       font-size: 0.98rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
       white-space: nowrap;
     }
@@ -95,7 +109,6 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.7);
       font-size: 0.92rem;
-      text-decoration: none;
       color: #ffffff;
       opacity: 0.9;
       white-space: nowrap;
@@ -103,31 +116,13 @@
 
     .cta-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.30);
       background: #f4f7fb;
       color: var(--primary-dark);
     }
 
-    .hero-visual {
-      position: relative;
-      min-height: 220px;
-      border-radius: 32px;
-      overflow: hidden;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.2), transparent 55%),
-                  rgba(0, 0, 0, 0.1);
-    }
-
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* GENERIC LAYOUT */
     main {
-      padding: 40px 24px 32px;
+      padding: 42px 24px 34px;
       background: #ffffff;
     }
 
@@ -138,17 +133,17 @@
 
     h2 {
       color: var(--primary-teal);
-      font-size: 1.6rem;
+      font-size: 1.65rem;
       margin-bottom: 16px;
     }
 
     p.lead {
       font-size: 1.02rem;
-      max-width: 760px;
+      max-width: 780px;
       margin-bottom: 18px;
     }
 
-    /* ABOUT / PROFILE */
+    /* PROFILE */
     .profile-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -163,6 +158,7 @@
       padding: 18px 20px;
       font-size: 0.92rem;
       box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      border: 1px solid #dde4ec;
     }
 
     .profile-badge-title {
@@ -184,8 +180,12 @@
     .section-soft {
       background: var(--surface-soft);
       padding: 36px 24px 40px;
-      margin-top: 32px;
+      margin-top: 34px;
+      border-top: 1px solid #dde4ec;
+      border-bottom: 1px solid #dde4ec;
     }
+
+    .section-soft .container { max-width: 1100px; margin: 0 auto; }
 
     .card-grid {
       display: grid;
@@ -200,6 +200,7 @@
       padding: 18px 18px 20px;
       font-size: 0.95rem;
       box-shadow: 0 10px 22px rgba(0,0,0,0.05);
+      border: 1px solid #dde4ec;
     }
 
     .card-label {
@@ -255,6 +256,7 @@
       padding: 18px 18px 20px;
       font-size: 0.94rem;
       box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+      border: 1px solid #dde4ec;
     }
 
     .step-number {
@@ -285,9 +287,10 @@
       background: var(--surface-soft);
       border-radius: 16px;
       padding: 24px 22px;
-      margin-top: 10px;
+      margin-top: 12px;
       box-shadow: 0 8px 18px rgba(0,0,0,0.05);
       font-size: 0.96rem;
+      border: 1px solid #dde4ec;
     }
 
     .contact-grid {
@@ -304,17 +307,16 @@
       text-align: center;
       padding: 18px 12px;
       font-size: 0.9rem;
-      margin-top: 30px;
+      margin-top: 32px;
     }
 
     @media (max-width: 960px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 28px;
+      header.hero {
+        padding: 40px 24px 46px;
       }
 
       h1.hero-title {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
       }
 
       .profile-grid,
@@ -327,7 +329,7 @@
 
     @media (max-width: 640px) {
       header.hero {
-        padding: 32px 20px 40px;
+        padding: 30px 18px 40px;
       }
 
       main {
@@ -337,26 +339,29 @@
       .section-soft {
         padding: 28px 18px 32px;
       }
+
+      .hero-cta-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta-primary, .cta-secondary-ghost {
+        width: auto;
+      }
     }
   </style>
 </head>
 <body>
   <header class="hero">
     <div class="hero-inner">
-      <div class="hero-text">
-        <div class="brand-label">AV Technical Consulting</div>
-        <h1 class="hero-title">Chemical Risk Engineering. Mechanical Safety. Advanced Risk Solutions.</h1>
-        <p class="hero-subtitle">
-          Specialized consulting in chemical risk management, occupational risk prevention and mechanical hazard control for industrial, agrochemical, educational, laboratory and logistics operations.
-        </p>
-        <div class="hero-cta-wrap">
-          <a href="#contact" class="cta-primary">Request a Technical Assessment</a>
-          <a href="#services" class="cta-secondary-ghost">View core risk services</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <!-- IMPORTANTE: guarda tu foto real con este nombre y súbela junto al index.html -->
-        <img src="hero-rig-field.jpg" alt="Real field operation with drilling rig representing industrial risk context" />
+      <div class="brand-label">AV Technical Consulting</div>
+      <h1 class="hero-title">Chemical Risk Engineering. Mechanical Safety. Advanced Risk Solutions.</h1>
+      <p class="hero-subtitle">
+        Specialized consulting in chemical risk management, occupational risk prevention and mechanical hazard control for industrial, agrochemical, educational, laboratory and logistics environments.
+      </p>
+      <div class="hero-cta-wrap">
+        <a href="#contact" class="cta-primary">Request a Technical Assessment</a>
+        <a href="#services" class="cta-secondary-ghost">View core occupational risk services</a>
       </div>
     </div>
   </header>
@@ -370,19 +375,17 @@
             <strong>SST &amp; Engineering Consultant</strong> focused on preventing occupational accidents and diseases through chemical, mechanical and environmental risk control. The practice integrates industrial engineering, safety engineering and field experience across multiple sectors.
           </p>
           <p>
-            AV Technical Consulting supports organizations through technical assessments, remote and on-site audits, risk mapping, procedure design and targeted training programs. The objective is to translate regulations and standards into practical, engineering-based controls that work in real operations.
+            AV Technical Consulting supports organizations through technical assessments, remote and on-site audits, risk mapping, procedure design and targeted training programs. The aim is to translate regulations and standards into practical, engineering-based controls that work in real operations and protect workers.
           </p>
         </div>
         <div class="profile-badge">
-          <div class="profile-badge-title">Core Competence</div>
-          <p>
-            Occupational risk prevention with emphasis on:
-          </p>
+          <div class="profile-badge-title">Core Competence in Occupational Risk</div>
+          <p>Specialized focus on:</p>
           <ul>
-            <li>Chemical exposure and compatibility risk</li>
-            <li>Mechanical hazard control (equipment and processes)</li>
-            <li>Environmental and locative conditions affecting worker safety</li>
-            <li>Integration with SG-SST and regulatory compliance</li>
+            <li>Chemical exposure and compatibility risk.</li>
+            <li>Mechanical hazard control in equipment, tools and processes.</li>
+            <li>Physical and environmental conditions that affect worker health.</li>
+            <li>Alignment with SG-SST, ARL programs and regulatory requirements.</li>
           </ul>
         </div>
       </div>
@@ -391,11 +394,13 @@
     <section class="section-soft" id="services">
       <div class="container">
         <h2>Core Consulting Services</h2>
-        <p class="lead">Engineering-based services focused on preventing occupational incidents in operations that handle chemicals, mechanical equipment and physical hazards.</p>
+        <p class="lead">
+          Engineering-based services focused on preventing occupational incidents in operations that handle chemicals, mechanical equipment and significant physical hazards.
+        </p>
         <div class="card-grid">
           <div class="card">
             <div class="card-label">Program level</div>
-            <div class="card-title">Chemical Risk Programs</div>
+            <div class="card-title">Chemical Risk Management</div>
             <ul>
               <li>Chemical inventory and hazard classification (GHS / UN).</li>
               <li>Risk mapping by area, task and worker exposure.</li>
@@ -415,9 +420,9 @@
           </div>
           <div class="card">
             <div class="card-label">Incident readiness</div>
-            <div class="card-title">Emergency and Spill Response</div>
+            <div class="card-title">Emergency &amp; Spill Response</div>
             <ul>
-              <li>Review of emergency plans for chemical scenarios.</li>
+              <li>Review of emergency plans for chemical and process scenarios.</li>
               <li>Design of spill response procedures and quick guides.</li>
               <li>Evaluation of kits, equipment and training needs.</li>
               <li>Post-incident analysis and corrective action tracking.</li>
@@ -429,7 +434,9 @@
 
     <section class="container" id="industries">
       <h2>Industries and Environments Served</h2>
-      <p class="lead">The consulting practice adapts the same technical rigor to different realities in the field, always focused on worker protection and operational continuity.</p>
+      <p class="lead">
+        The consulting practice adapts the same technical rigor to different realities in the field, always focused on worker protection, operational continuity and regulatory compliance.
+      </p>
       <div class="pill-row">
         <div class="pill">Agrochemical distributors and field operations</div>
         <div class="pill">Industrial plants and maintenance workshops</div>
@@ -448,21 +455,21 @@
             <div class="step-number">1</div>
             <div class="step-title">Technical Diagnosis</div>
             <p>
-              Collection of information on processes, substances, tasks and existing controls. Visual inspections, document review and structured interviews to understand how work is really performed.
+              Collection of information on processes, substances, tasks and existing controls. Visual inspections, document review and structured interviews to understand how work is actually performed on site.
             </p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
             <div class="step-title">Risk Analysis</div>
             <p>
-              Identification of chemical, mechanical and physical hazards, evaluation of exposure scenarios and definition of critical points. The analysis links occupational risk with regulatory and operational impacts.
+              Identification of chemical, mechanical and physical hazards, evaluation of exposure scenarios and definition of critical points. The analysis links occupational risk with regulatory, health and operational impacts.
             </p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
-            <div class="step-title">Controls and Implementation Roadmap</div>
+            <div class="step-title">Controls &amp; Implementation Roadmap</div>
             <p>
-              Design of practical control measures, procedures, checklists and training content. Prioritized action plans enable companies to advance in stages while reducing risk in a measurable way.
+              Design of practical control measures, procedures, checklists and training content. Prioritized action plans enable companies to advance in stages while reducing risk in a measurable and auditable way.
             </p>
           </div>
         </div>
@@ -478,13 +485,13 @@
               To request a technical assessment, discuss a specific project or explore collaboration with an ARL or institutional partner, please reach out using the contact details below.
             </p>
             <p>
-              Each engagement is scoped based on process complexity, number of sites and regulatory requirements, ensuring that the consulting effort is aligned with the real risk profile of the organization.
+              Each engagement is scoped based on process complexity, number of sites and regulatory requirements, ensuring that the consulting effort is aligned with the real risk profile of the organization and focused on preventing occupational injuries and diseases.
             </p>
           </div>
           <div>
             <p><strong>Email</strong><br />info@avtechnicalconsulting.com</p>
             <p><strong>Location</strong><br />Bogotá, Colombia – Remote support for national and international clients</p>
-            <p><strong>Focus</strong><br />Occupational risk prevention in operations involving chemicals, mechanical equipment and physical hazards.</p>
+            <p><strong>Focus</strong><br />Occupational risk prevention in operations involving chemicals, mechanical equipment and significant physical hazards.</p>
           </div>
         </div>
       </div>
@@ -492,7 +499,7 @@
   </main>
 
   <footer>
-    AV Technical Consulting © 2025 – Global Safety Engineering Services
+    AV Technical Consulting © 2025 – Occupational &amp; Process Safety Consulting
   </footer>
 </body>
 </html>
