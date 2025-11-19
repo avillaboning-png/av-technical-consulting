@@ -1543,28 +1543,28 @@
   </a>
 <!-- Control de sub-página -->
 <script>
-  function openChemicalRisk() {
-    const hero = document.querySelector("header.hero");
-    const main = document.querySelector("main");
-    const sub = document.getElementById("sub-chemical-risk");
+function openChemicalRisk() {
+    const hero   = document.querySelector("header.hero");
+    const main   = document.querySelector("main");
+    const sub    = document.getElementById("sub-chemical-risk");
     const footer = document.querySelector("footer");
 
-    if (hero) hero.style.display = "none";
-    if (main) main.style.display = "none";
-    if (footer) footer.style.display = "none";   // ⬅️ ocultar footer
-    if (sub) sub.style.display = "block";
+    if (hero)   hero.style.display   = "none";
+    if (main)   main.style.display   = "none";
+    if (footer) footer.style.display = "none";
+    if (sub)    sub.style.display    = "block";
 }
 
-  function returnHome() {
-    const hero = document.querySelector("header.hero");
-    const main = document.querySelector("main");
-    const sub = document.getElementById("sub-chemical-risk");
+function returnHome() {
+    const hero   = document.querySelector("header.hero");
+    const main   = document.querySelector("main");
+    const sub    = document.getElementById("sub-chemical-risk");
     const footer = document.querySelector("footer");
 
-    if (hero) hero.style.display = "flex";
-    if (main) main.style.display = "block";
-    if (footer) footer.style.display = "block";  // ⬅️ mostrar footer otra vez
-    if (sub) sub.style.display = "none";
+    if (hero)   hero.style.display   = "flex";
+    if (main)   main.style.display   = "block";
+    if (footer) footer.style.display = "block";
+    if (sub)    sub.style.display    = "none";
 }
 </script>
   
