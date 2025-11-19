@@ -2,724 +2,1205 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <title>AV Technical Consulting – Occupational & Process Safety</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AV Technical Consulting – Ingeniería de Riesgos y Seguridad Mecánica</title>
-  <meta name="description" content="Consultoría especializada en gestión de riesgos químicos, seguridad mecánica y prevención de accidentes laborales para operaciones industriales, agroquímicas, educativas, de laboratorio y logística.">
+  <meta
+    name="description"
+    content="Consultoría técnica en gestión de riesgos químicos, seguridad mecánica y prevención de accidentes laborales para entornos industriales, agroquímicos, educativos, de laboratorio y logísticos."
+  />
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
-      --bg-dark: #021824;
-      --bg-card: #0b2433;
-      --accent: #16a34a;
-      --accent-soft: #22c55e;
-      --text-main: #f9fafb;
-      --text-muted: #d1d5db;
-      --border-soft: rgba(148, 163, 184, 0.4);
-      --pill-bg: rgba(15, 118, 110, 0.15);
-      --shadow-soft: 0 20px 45px rgba(15, 23, 42, 0.65);
-      --hero-overlay: radial-gradient(circle at 0 0, rgba(45, 212, 191, 0.18), transparent 55%),
-                       radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.2), transparent 55%),
-                       linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(12, 74, 110, 0.96));
+      --bg-body: #020817;
+      --bg-elevated: #020617;
+      --bg-card: #020817;
+      --bg-card-soft: #020617;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.12);
+      --accent-outline: rgba(34, 197, 94, 0.7);
+      --accent-secondary: #38bdf8;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-soft: #6b7280;
+      --border-subtle: rgba(148, 163, 184, 0.28);
+      --chip-bg: rgba(15, 23, 42, 0.95);
+      --chip-border: rgba(148, 163, 184, 0.55);
+      --shadow-soft: 0 22px 90px rgba(15, 23, 42, 0.7);
+      --radius-lg: 24px;
+      --radius-xl: 28px;
+      --radius-pill: 999px;
+      --max-width: 1140px;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html,
+    body {
       margin: 0;
       padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 36%, #000 100%);
+      color: var(--text-main);
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      background: #020617;
-      color: var(--text-main);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    main {
       min-height: 100vh;
-      background: radial-gradient(circle farthest-side at top left, #0f172a 0, #020617 48%, #000 100%);
-      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
     }
 
-    .shell {
-      max-width: 1120px;
+    .page-shell {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 24px 20px 72px;
+      padding: 24px 16px 72px;
     }
 
-    /* HERO CON FOTO DE FONDO */
+    /* ---------- HEADER LIGERO ---------- */
 
-    .hero {
-      position: relative;
-      min-height: 88vh;
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      background: radial-gradient(circle at 25% 0, #22c55e, #0f172a 55%, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      border-radius: 0 0 32px 32px;
-      box-shadow: var(--shadow-soft);
-      isolation: isolate;
-      /* AQUÍ VA TU FOTO + EL DEGRADADO */
-      background-image:
-        var(--hero-overlay),
-        url('hero-rig-field.jpg');
-      background-size: cover;
-      background-position: center bottom;
-      background-repeat: no-repeat;
+      color: #e5e7eb;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
     }
 
-    /* Capa extra para oscurecer un poco sin matar la foto */
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.8));
-      mix-blend-mode: multiply;
-      opacity: 0.9;
-      z-index: -1;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 32px;
-      align-items: center;
-      padding: 32px 32px 40px;
-    }
-
-    .hero-tagline {
-      font-size: 0.86rem;
+    .brand-text-small {
+      font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #a5f3fc;
-      margin-bottom: 12px;
+      color: var(--text-soft);
+      font-weight: 500;
     }
 
-    .hero-eyebrow {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: #e0f2fe;
-      margin-bottom: 18px;
+    .brand-text-main {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+      overflow: hidden;
+    }
+
+    .lang-toggle button {
+      border: none;
+      background: transparent;
+      color: var(--text-soft);
+      font-size: 11px;
+      padding: 6px 10px;
+      cursor: pointer;
+      min-width: 42px;
+    }
+
+    .lang-toggle button.active {
+      background: radial-gradient(circle at top, #22c55e, #16a34a 58%, #15803d);
+      color: #ecfdf5;
+      font-weight: 600;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero-shell {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: #020617;
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .hero-section {
+      background:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.92)),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.25), rgba(15, 23, 42, 0.9)),
+        url("hero-rig-field.jpg") center/cover no-repeat;
+      padding: 112px 26px 90px;
+      color: #f9fafb;
+      position: relative;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .hero-title {
-      font-size: clamp(2.45rem, 3vw, 3rem);
-      line-height: 1.07;
+      font-size: 3.05rem;
+      line-height: 1.12;
       font-weight: 800;
-      letter-spacing: -0.04em;
-      margin-bottom: 18px;
-      max-width: 26ch;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      max-width: 640px;
+      text-shadow: 0 18px 55px rgba(0, 0, 0, 0.9);
     }
 
     .hero-title span.highlight {
       color: #4ade80;
     }
 
-    .hero-text {
-      font-size: 0.98rem;
+    .hero-subtitle {
+      font-size: 1.12rem;
       color: var(--text-muted);
-      max-width: 52ch;
+      max-width: 620px;
       margin-bottom: 18px;
     }
 
     .hero-location {
-      font-size: 0.85rem;
-      color: #cbd5f5;
-      opacity: 0.95;
-      margin-bottom: 28px;
+      font-size: 0.96rem;
+      color: var(--text-soft);
+      margin-bottom: 26px;
     }
 
-    .hero-ctas {
+    .hero-location strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-bottom: 22px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 22px;
-      border-radius: 999px;
-      font-size: 0.96rem;
+    .btn-primary,
+    .btn-secondary {
+      border-radius: var(--radius-pill);
+      padding: 11px 20px;
+      font-size: 0.95rem;
       font-weight: 600;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+        background 0.15s ease-out, border-color 0.12s ease-out;
+      text-decoration: none;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-      color: #022c22;
-      box-shadow: 0 14px 32px rgba(34, 197, 94, 0.45);
+      background: radial-gradient(circle at top, #22c55e, #16a34a 58%, #15803d);
+      color: #ecfdf5;
+      border-color: rgba(34, 197, 94, 0.9);
+      box-shadow: 0 16px 40px rgba(22, 163, 74, 0.45);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 38px rgba(34, 197, 94, 0.55);
-      background: linear-gradient(135deg, #22c55e, #4ade80);
+      box-shadow: 0 18px 48px rgba(22, 163, 74, 0.6);
     }
 
     .btn-secondary {
-      background: rgba(15, 23, 42, 0.3);
+      background: rgba(15, 23, 42, 0.4);
+      color: var(--text-main);
       border-color: rgba(148, 163, 184, 0.7);
-      color: #e5e7eb;
-      backdrop-filter: blur(12px);
     }
 
     .btn-secondary:hover {
-      background: rgba(15, 23, 42, 0.6);
-      border-color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.7);
       transform: translateY(-1px);
     }
 
-    .hero-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 0.78rem;
-      color: #bae6fd;
+    .btn-primary span.icon,
+    .btn-secondary span.icon {
+      font-size: 1.05rem;
+      line-height: 0;
     }
 
-    .hero-pill {
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .hero-chip {
+      border-radius: var(--radius-pill);
+      padding: 6px 11px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top left, #0f172a, #020617);
+      color: var(--text-soft);
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      backdrop-filter: blur(16px);
     }
 
-    .hero-pill-dot {
+    .hero-chip-dot {
       width: 7px;
       height: 7px;
       border-radius: 999px;
       background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.22);
     }
 
-    /* CARD DERECHO EN HERO */
-
-    .hero-card {
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 60%),
-                  rgba(15, 23, 42, 0.88);
+    .hero-panel {
+      background: radial-gradient(circle at top left, #020617, #020617 46%, #000 100%);
       border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
       padding: 20px 20px 18px;
-      max-width: 360px;
-      margin-left: auto;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 22px 80px rgba(15, 23, 42, 0.75);
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-card-eyebrow {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at top right,
+        rgba(56, 189, 248, 0.23),
+        transparent 55%
+      );
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-panel-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-panel-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #7ee7ff;
-      margin-bottom: 8px;
-    }
-
-    .hero-card-title {
-      font-size: 1.02rem;
-      font-weight: 700;
+      color: var(--accent-secondary);
       margin-bottom: 10px;
-      color: #f9fafb;
+      font-weight: 600;
     }
 
-    .hero-card-subtitle {
-      font-size: 0.82rem;
-      color: #cbd5f5;
+    .hero-panel-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #e5e7eb;
       margin-bottom: 12px;
     }
 
-    .hero-card-list {
+    .hero-panel-list {
       list-style: none;
-      display: grid;
-      gap: 8px;
-      font-size: 0.88rem;
-      color: #e5e7eb;
-      padding-left: 0;
-      margin-bottom: 8px;
-    }
-
-    .hero-card-list li {
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .hero-card-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.7em;
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    .hero-card-footer {
-      margin-top: 8px;
-      font-size: 0.78rem;
-      color: #a5b4fc;
-      opacity: 0.9;
-    }
-
-    .hero-badge-bar {
-      position: absolute;
-      inset-inline: 32px;
-      bottom: 18px;
+      margin: 0;
+      padding: 0;
       display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.8rem;
-      color: #bae6fd;
-      background: rgba(15, 23, 42, 0.82);
-      border-radius: 999px;
-      padding: 7px 14px;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      backdrop-filter: blur(18px);
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
-    .hero-badge-dot {
-      width: 8px;
-      height: 8px;
+    .hero-panel-list li {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .hero-panel-bullet {
+      width: 7px;
+      height: 7px;
       border-radius: 999px;
+      margin-top: 7px;
       background: #22c55e;
     }
 
-    .hero-badge-divider {
-      width: 1px;
-      height: 18px;
-      background: rgba(148, 163, 184, 0.55);
-    }
-
-    /* SECCIONES INFERIORES (como las que ya tenías) */
+    /* ---------- SECCIONES GENERALES ---------- */
 
     section {
-      padding: 56px 0 8px;
-    }
-
-    section + section {
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      margin-bottom: 42px;
     }
 
     .section-title {
       font-size: 1.4rem;
-      font-weight: 700;
+      margin-bottom: 16px;
       color: #e5e7eb;
-      margin-bottom: 18px;
     }
 
-    .section-grid {
+    .section-subtitle {
+      color: var(--text-soft);
+      font-size: 0.96rem;
+      max-width: 720px;
+      margin-bottom: 26px;
+    }
+
+    .two-column {
       display: grid;
-      gap: 24px;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 28px;
+      align-items: flex-start;
     }
 
-    .two-col {
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.4fr);
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 18px;
-      padding: 20px 20px 18px;
-      border: 1px solid rgba(30, 64, 175, 0.6);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+      background: radial-gradient(circle at top left, #020617, #000 110%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      padding: 18px 18px 17px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
     }
 
-    .card h3 {
-      font-size: 1rem;
+    .card-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
       margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 9px;
       color: #e5e7eb;
     }
 
-    .card p {
-      font-size: 0.9rem;
-      color: #cbd5f5;
-    }
-
     .card ul {
-      margin-top: 10px;
+      margin: 0;
       padding-left: 18px;
-      font-size: 0.89rem;
-      color: #d1d5db;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 8px;
     }
 
     .pill {
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.8rem;
-      color: #e5e7eb;
-    }
-
-    .contact-grid {
-      display: grid;
-      gap: 22px;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.3fr);
-    }
-
-    .contact-list dt {
+      border-radius: var(--radius-pill);
+      padding: 7px 11px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: var(--chip-bg);
+      color: var(--text-muted);
       font-size: 0.82rem;
-      font-weight: 600;
-      color: #a5b4fc;
-      margin-bottom: 2px;
     }
 
-    .contact-list dd {
-      margin: 0 0 10px;
-      font-size: 0.9rem;
-      color: #e5e7eb;
+    /* ---------- METODOLOGÍA Y CONTACTO ---------- */
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
     }
 
-    footer {
-      padding: 18px 20px 26px;
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
-      background: #020617;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #9ca3af;
+    .method-card {
+      background: radial-gradient(circle at top left, #020617, #000 110%);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 17px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
     }
 
-    /* BOTÓN FLOTANTE WHATSAPP */
-
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 52px;
-      height: 52px;
+    .method-step {
+      width: 22px;
+      height: 22px;
       border-radius: 999px;
-      background: #22c55e;
+      background: rgba(15, 23, 42, 1);
+      border: 1px solid rgba(148, 163, 184, 0.85);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 14px 30px rgba(34, 197, 94, 0.6);
-      color: #022c22;
-      font-size: 28px;
-      z-index: 40;
-    }
-
-    .whatsapp-float:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 36px rgba(34, 197, 94, 0.8);
-    }
-
-    .whatsapp-float span {
-      position: absolute;
-      right: 60px;
-      font-size: 0.8rem;
-      background: rgba(15, 23, 42, 0.95);
       color: #e5e7eb;
+      font-size: 0.78rem;
+      margin-bottom: 9px;
+    }
+
+    .method-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 7px;
+      color: #e5e7eb;
+    }
+
+    .method-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-card {
+      background: radial-gradient(circle at top left, #020617, #000 110%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 18px;
+      align-items: flex-start;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+    }
+
+    .contact-main {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-main p {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .contact-details {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-details dt {
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-top: 4px;
+    }
+
+    .contact-details dd {
+      margin: 0 0 6px;
+    }
+
+    .contact-details a {
+      color: var(--accent-secondary);
+      text-decoration: none;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.35);
+      padding: 14px 0 10px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      background: radial-gradient(circle at top, #020617, #020617 50%, #000 100%);
+      margin-top: auto;
+    }
+
+    /* ---------- WHATSAPP FLOAT ---------- */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 20px;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .whatsapp-label {
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      color: #e5e7eb;
+      font-size: 0.8rem;
       padding: 6px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      white-space: nowrap;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+      max-width: 180px;
     }
 
-    /* RESPONSIVE */
+    .whatsapp-button {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top, #22c55e, #16a34a 60%, #15803d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(34, 197, 94, 0.8);
+      cursor: pointer;
+      box-shadow: 0 12px 40px rgba(22, 163, 74, 0.65);
+      text-decoration: none;
+      color: #ecfdf5;
+      font-size: 1.45rem;
+    }
 
-    @media (max-width: 880px) {
-      .hero {
-        min-height: 100vh;
-      }
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 26px 18px 52px;
-      }
-      .hero-card {
-        margin: 0 auto;
-        max-width: 100%;
-      }
-      .hero-badge-bar {
-        position: static;
-        margin-top: 20px;
-      }
-      .shell {
-        padding-inline: 16px;
-      }
-      .section-grid.two-col,
-      .contact-grid {
+    .whatsapp-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 15px 44px rgba(22, 163, 74, 0.8);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 960px) {
+      .hero-layout {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .hero-section {
+        padding: 88px 20px 70px;
+      }
+
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .method-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
       .hero-title {
-        font-size: 2.1rem;
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-shell {
+        padding: 18px 14px 70px;
+      }
+
+      .hero-section {
+        padding: 78px 16px 60px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .hero-chip {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .top-bar {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .brand-text-main {
+        display: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="services">
-      <div class="hero-inner shell">
+  <div class="page-shell">
+    <!-- TOP BAR -->
+    <header class="top-bar">
+      <div class="brand-mark">
+        <div class="brand-logo">AV</div>
         <div>
-          <div class="hero-tagline">AV TECHNICAL CONSULTING</div>
-          <div class="hero-eyebrow">
-            Seguridad en Ingeniería · Experiencia Química · Soluciones Globales
-          </div>
-
-          <h1 class="hero-title">
-            Ingeniería de <span class="highlight">Riesgos Químicos</span>. Seguridad Mecánica. Soluciones Avanzadas de Gestión del Riesgo.
-          </h1>
-
-          <p class="hero-text">
-            Consultoría especializada en gestión de riesgo químico, prevención de enfermedades laborales y control de riesgos mecánicos para entornos industriales, agroquímicos, educativos, de laboratorio y logísticos.
-          </p>
-
-          <p class="hero-location">
-            Con base en Bogotá, Colombia – acompañamiento remoto para clientes a nivel nacional e internacional.
-          </p>
-
-          <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary">
-              Solicitar una evaluación técnica
-            </a>
-            <a href="#core-services" class="btn btn-secondary">
-              Ver servicios básicos de riesgo laboral
-            </a>
-          </div>
-
-          <div class="hero-pill-row">
-            <div class="hero-pill">
-              <span class="hero-pill-dot"></span>
-              <span>Seguridad en ingeniería</span>
-            </div>
-            <div class="hero-pill">
-              Experiencia en riesgo químico
-            </div>
-            <div class="hero-pill">
-              Implementación alineada con SG-SST
-            </div>
-          </div>
+          <div class="brand-text-small" data-i18n="brand-tagline"></div>
+          <div class="brand-text-main">AV Technical Consulting</div>
         </div>
+      </div>
 
-        <aside class="hero-card">
-          <div class="hero-card-eyebrow">PRÁCTICA DE CAMPO</div>
-          <div class="hero-card-title">Práctica de Riesgo Laboral Probada en Campo</div>
-          <div class="hero-card-subtitle">
-            Ingeniería aplicada a operaciones reales con sustancias peligrosas y equipos mecánicos.
+      <div class="lang-toggle" aria-label="Language toggle">
+        <button id="btn-es" class="active" type="button">ES</button>
+        <button id="btn-en" type="button">EN</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero-shell">
+      <section id="hero" class="hero-section">
+        <div class="hero-layout">
+          <div class="hero-content">
+            <div class="hero-kicker" data-i18n="hero-kicker"></div>
+            <h1 class="hero-title">
+              <span class="highlight" data-i18n="hero-title-1"></span>
+              <span data-i18n="hero-title-2"></span><br />
+              <span data-i18n="hero-title-3"></span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero-subtitle"></p>
+            <p class="hero-location" data-i18n="hero-location"></p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn-primary">
+                <span class="icon">➜</span>
+                <span data-i18n="hero-cta-primary"></span>
+              </a>
+              <a href="#services" class="btn-secondary">
+                <span class="icon">⚙︎</span>
+                <span data-i18n="hero-cta-secondary"></span>
+              </a>
+            </div>
+
+            <div class="hero-chips">
+              <div class="hero-chip">
+                <span class="hero-chip-dot"></span>
+                <span data-i18n="hero-chip-1"></span>
+              </div>
+              <div class="hero-chip">
+                <span class="hero-chip-dot"></span>
+                <span data-i18n="hero-chip-2"></span>
+              </div>
+              <div class="hero-chip">
+                <span class="hero-chip-dot"></span>
+                <span data-i18n="hero-chip-3"></span>
+              </div>
+            </div>
           </div>
-          <ul class="hero-card-list">
-            <li>
-              Evaluación de exposición química, criterios de compatibilidad y condiciones de almacenamiento alineados con el SGA y las clases de transporte ONU.
-            </li>
-            <li>
-              Análisis de riesgos mecánicos en maquinaria, herramientas y operaciones de mantenimiento con énfasis en protecciones y maniobras seguras.
-            </li>
-            <li>
-              Hojas de ruta prácticas que conectan los requisitos normativos con las condiciones reales de trabajo y la reducción medible del riesgo.
-            </li>
+
+          <aside class="hero-panel">
+            <div class="hero-panel-inner">
+              <div class="hero-panel-label" data-i18n="hero-panel-label"></div>
+              <div class="hero-panel-title" data-i18n="hero-panel-title"></div>
+              <ul class="hero-panel-list">
+                <li>
+                  <span class="hero-panel-bullet"></span>
+                  <span data-i18n="hero-panel-li-1"></span>
+                </li>
+                <li>
+                  <span class="hero-panel-bullet"></span>
+                  <span data-i18n="hero-panel-li-2"></span>
+                </li>
+                <li>
+                  <span class="hero-panel-bullet"></span>
+                  <span data-i18n="hero-panel-li-3"></span>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <!-- PERFIL PROFESIONAL -->
+    <section id="profile">
+      <div class="two-column">
+        <div>
+          <h2 class="section-title" data-i18n="profile-title"></h2>
+          <p class="section-subtitle" data-i18n="profile-text-1"></p>
+          <p class="section-subtitle" data-i18n="profile-text-2"></p>
+        </div>
+        <div>
+          <h3 class="card-title" data-i18n="competence-title"></h3>
+          <ul class="card" style="margin-top:8px;">
+            <li data-i18n="competence-1"></li>
+            <li data-i18n="competence-2"></li>
+            <li data-i18n="competence-3"></li>
+            <li data-i18n="competence-4"></li>
           </ul>
-          <div class="hero-card-footer">
-            Foco en reducción de incidentes, cumplimiento normativo y continuidad operacional.
-          </div>
-        </aside>
-
-        <div class="hero-badge-bar">
-          <div class="hero-badge-dot"></div>
-          <span>Consultoría en riesgo químico y mecánico</span>
-          <div class="hero-badge-divider"></div>
-          <span>Alianzas con ARL e instituciones educativas</span>
         </div>
       </div>
     </section>
 
-    <div class="shell">
-      <!-- PERFIL PROFESIONAL -->
-      <section>
-        <h2 class="section-title">Professional Profile</h2>
-        <div class="section-grid two-col">
-          <div class="card">
-            <h3>SST & Engineering Consultant</h3>
-            <p>
-              Focused on preventing occupational accidents and diseases through chemical, mechanical and environmental risk control.
-              The practice integrates industrial engineering, safety engineering and real field experience across multiple sectors.
-            </p>
-            <p style="margin-top:10px;">
-              AV Technical Consulting supports organizations through technical assessments, remote and on-site audits, risk mapping,
-              procedure design and targeted training programs. The objective is to translate regulations and standards into practical,
-              engineering-based controls that work in real operations and protect workers.
-            </p>
-          </div>
+    <!-- SERVICIOS CLAVE -->
+    <section id="services">
+      <h2 class="section-title" data-i18n="services-title"></h2>
+      <p class="section-subtitle" data-i18n="services-subtitle"></p>
 
-          <div class="card">
-            <h3>Core Competence in Occupational Risk</h3>
-            <ul>
-              <li>Chemical exposure and compatibility risk in industrial, educational and laboratory environments.</li>
-              <li>Mechanical hazard control in equipment, tools and maintenance tasks.</li>
-              <li>Physical and environmental conditions affecting worker health and process reliability.</li>
-              <li>Alignment with SG-SST requirements, ARL programs and regulatory frameworks.</li>
-            </ul>
-          </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-label" data-i18n="services-level-1"></div>
+          <div class="card-title" data-i18n="services-1-title"></div>
+          <ul>
+            <li data-i18n="services-1-li-1"></li>
+            <li data-i18n="services-1-li-2"></li>
+            <li data-i18n="services-1-li-3"></li>
+            <li data-i18n="services-1-li-4"></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-label" data-i18n="services-level-2"></div>
+          <div class="card-title" data-i18n="services-2-title"></div>
+          <ul>
+            <li data-i18n="services-2-li-1"></li>
+            <li data-i18n="services-2-li-2"></li>
+            <li data-i18n="services-2-li-3"></li>
+            <li data-i18n="services-2-li-4"></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-label" data-i18n="services-level-3"></div>
+          <div class="card-title" data-i18n="services-3-title"></div>
+          <ul>
+            <li data-i18n="services-3-li-1"></li>
+            <li data-i18n="services-3-li-2"></li>
+            <li data-i18n="services-3-li-3"></li>
+            <li data-i18n="services-3-li-4"></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- INDUSTRIAS -->
+    <section id="industries">
+      <h2 class="section-title" data-i18n="industries-title"></h2>
+      <p class="section-subtitle" data-i18n="industries-subtitle"></p>
+      <div class="pill-row">
+        <span class="pill" data-i18n="industries-1"></span>
+        <span class="pill" data-i18n="industries-2"></span>
+        <span class="pill" data-i18n="industries-3"></span>
+        <span class="pill" data-i18n="industries-4"></span>
+        <span class="pill" data-i18n="industries-5"></span>
+        <span class="pill" data-i18n="industries-6"></span>
+      </div>
+    </section>
+
+    <!-- METODOLOGÍA -->
+    <section id="methodology">
+      <h2 class="section-title" data-i18n="method-title"></h2>
+      <p class="section-subtitle" data-i18n="method-subtitle"></p>
+
+      <div class="method-grid">
+        <article class="method-card">
+          <div class="method-step">1</div>
+          <div class="method-title" data-i18n="method-1-title"></div>
+          <p class="method-text" data-i18n="method-1-text"></p>
+        </article>
+        <article class="method-card">
+          <div class="method-step">2</div>
+          <div class="method-title" data-i18n="method-2-title"></div>
+          <p class="method-text" data-i18n="method-2-text"></p>
+        </article>
+        <article class="method-card">
+          <div class="method-step">3</div>
+          <div class="method-title" data-i18n="method-3-title"></div>
+          <p class="method-text" data-i18n="method-3-text"></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact">
+      <h2 class="section-title" data-i18n="contact-title"></h2>
+
+      <div class="contact-card">
+        <div class="contact-main">
+          <p data-i18n="contact-intro-1"></p>
+          <p data-i18n="contact-intro-2"></p>
         </div>
-      </section>
 
-      <!-- SERVICIOS PRINCIPALES -->
-      <section id="core-services">
-        <h2 class="section-title">Core Consulting Services</h2>
-        <p style="color:#cbd5f5;font-size:0.94rem;margin-bottom:16px;">
-          Engineering-based services focused on preventing occupational incidents in operations that handle chemicals,
-          mechanical equipment and significant physical hazards.
-        </p>
+        <dl class="contact-details">
+          <dt data-i18n="contact-email-label"></dt>
+          <dd><a href="mailto:info@avtechnicalconsulting.com">info@avtechnicalconsulting.com</a></dd>
 
-        <div class="section-grid two-col" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
-          <div class="card">
-            <h3>Program Level – Chemical Risk Management</h3>
-            <ul>
-              <li>Chemical inventory and hazard classification (GHS / UN).</li>
-              <li>Risk mapping by area, task and worker exposure.</li>
-              <li>Compatibility matrices and storage criteria.</li>
-              <li>Procedures for safe handling, mixing and transfer.</li>
-            </ul>
-          </div>
+          <dt data-i18n="contact-phone-label"></dt>
+          <dd><a href="tel:+573153937116">+57 315 393 7116</a></dd>
 
-          <div class="card">
-            <h3>Operational Level – Occupational Safety Assessments</h3>
-            <ul>
-              <li>Mechanical hazard identification in equipment and tools.</li>
-              <li>Evaluation of physical and environmental conditions.</li>
-              <li>Inspection of PPE use, emergency resources and signage.</li>
-              <li>Action plans prioritized by risk and feasibility.</li>
-            </ul>
-          </div>
+          <dt data-i18n="contact-location-label"></dt>
+          <dd data-i18n="contact-location"></dd>
 
-          <div class="card">
-            <h3>Incident Readiness – Emergency &amp; Spill Response</h3>
-            <ul>
-              <li>Review of emergency plans for chemical and process scenarios.</li>
-              <li>Design of spill response procedures and quick guides.</li>
-              <li>Evaluation of kits, equipment and training needs.</li>
-              <li>Post-incident analysis and corrective action tracking.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <dt data-i18n="contact-focus-label"></dt>
+          <dd data-i18n="contact-focus"></dd>
+        </dl>
+      </div>
+    </section>
+  </div>
 
-      <!-- INDUSTRIAS ATENDIDAS -->
-      <section>
-        <h2 class="section-title">Industries and Environments Served</h2>
-        <p style="color:#cbd5f5;font-size:0.94rem;margin-bottom:14px;">
-          The consulting practice adapts the same technical rigor to different realities in the field, always focused on worker protection,
-          operational continuity and regulatory compliance.
-        </p>
+  <!-- WHATSAPP FLOAT -->
+  <div class="whatsapp-float">
+    <div class="whatsapp-label" data-i18n="wa-label"></div>
+    <a
+      id="wa-link"
+      class="whatsapp-button"
+      href="https://wa.me/573153937116?text=Hola%20Aliomar%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20consultor%C3%ADa%20en%20riesgos."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Escríbeme por WhatsApp"
+    >
+      ☰
+    </a>
+  </div>
 
-        <div class="pill-row">
-          <span class="pill">Agrochemical distributors and field operations</span>
-          <span class="pill">Industrial plants and maintenance workshops</span>
-          <span class="pill">Educational institutions and school laboratories</span>
-          <span class="pill">Clinical and diagnostic laboratories</span>
-          <span class="pill">Warehouses and logistics platforms</span>
-          <span class="pill">Small and medium industrial enterprises</span>
-        </div>
-      </section>
-
-      <!-- METODOLOGÍA -->
-      <section>
-        <h2 class="section-title">Methodology: From Diagnosis to Control</h2>
-        <div class="section-grid two-col" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
-          <div class="card">
-            <h3>1 · Technical Diagnosis</h3>
-            <p>
-              Collection of information on processes, substances, tasks and existing controls. Visual inspections, document review and
-              structured interviews to understand how work is actually performed on site.
-            </p>
-          </div>
-          <div class="card">
-            <h3>2 · Risk Analysis</h3>
-            <p>
-              Identification of chemical, mechanical and physical hazards, evaluation of exposure scenarios and definition of critical
-              points. The analysis links occupational risk with regulatory, health and operational impacts.
-            </p>
-          </div>
-          <div class="card">
-            <h3>3 · Controls &amp; Implementation Roadmap</h3>
-            <p>
-              Design of practical control measures, procedures, checklists and training content. Prioritized action plans enable companies
-              to advance in stages while reducing risk in a measurable and auditable way.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACTO -->
-      <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-grid">
-          <div class="card">
-            <h3>Project Discussions & Technical Assessment Requests</h3>
-            <p>
-              To request a technical assessment, discuss a specific project or explore collaboration with an ARL or institutional partner,
-              please reach out using the contact details. Each engagement is scoped based on process complexity, number of sites and
-              regulatory requirements, ensuring that the consulting effort is aligned with the real risk profile of the organization and
-              focused on preventing occupational injuries and diseases.
-            </p>
-          </div>
-
-          <div class="card">
-            <dl class="contact-list">
-              <dt>Email</dt>
-              <dd><a href="mailto:info@avtechnicalconsulting.com">info@avtechnicalconsulting.com</a></dd>
-
-              <dt>WhatsApp</dt>
-              <dd>
-                <a href="https://wa.me/573153937116" target="_blank" rel="noopener">
-                  +57 315 393 7116
-                </a>
-              </dd>
-
-              <dt>Location</dt>
-              <dd>Bogotá, Colombia – Remote support for national and international clients.</dd>
-
-              <dt>Focus</dt>
-              <dd>
-                Occupational risk prevention in operations involving chemicals, mechanical equipment and significant physical hazards.
-              </dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
+  <!-- FOOTER -->
   <footer>
-    AV Technical Consulting © 2025 – Occupational &amp; Process Safety Consulting
+    <span data-i18n="footer-text"></span>
   </footer>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
-  <a
-    href="https://wa.me/573153937116"
-    target="_blank"
-    rel="noopener"
-    class="whatsapp-float"
-    aria-label="Escribir por WhatsApp"
-  >
-    💬
-    <span>Escríbeme por WhatsApp</span>
-  </a>
+  <!-- SCRIPT DE IDIOMAS -->
+  <script>
+    const translations = {
+      es: {
+        "brand-tagline":
+          "Consultoría en Seguridad y Salud en el Trabajo · Riesgos Químicos y Mecánicos",
+
+        "hero-kicker":
+          "Seguridad en ingeniería · Experiencia química · Soluciones globales",
+
+        "hero-title-1": "Ingeniería de Riesgos Químicos.",
+        "hero-title-2": " Seguridad Mecánica.",
+        "hero-title-3": " Soluciones Avanzadas de Gestión del Riesgo.",
+
+        "hero-subtitle":
+          "Consultoría especializada en gestión de riesgo químico, prevención de enfermedades laborales y control de riesgos mecánicos para entornos industriales, agroquímicos, educativos, de laboratorio y logísticos.",
+
+        "hero-location":
+          "Con base en Bogotá, Colombia – acompañamiento remoto y presencial para clientes a nivel nacional e internacional.",
+
+        "hero-cta-primary": "Solicitar una evaluación técnica",
+        "hero-cta-secondary": "Ver servicios básicos de riesgo laboral",
+
+        "hero-chip-1": "Seguridad en ingeniería",
+        "hero-chip-2": "Experiencia en riesgo químico",
+        "hero-chip-3": "Soluciones alineadas con SGSST y normatividad",
+
+        "hero-panel-label": "Práctica de campo",
+        "hero-panel-title": "Práctica de Riesgo Laboral Probada en Campo",
+        "hero-panel-li-1":
+          "Evaluación de exposición química, criterios de compatibilidad y condiciones de almacenamiento alineados con el SGA y las clases de transporte ONU.",
+        "hero-panel-li-2":
+          "Análisis de riesgos mecánicos en maquinaria, herramientas y operaciones de mantenimiento con énfasis en protecciones y maniobras seguras.",
+        "hero-panel-li-3":
+          "Hojas de ruta prácticas que conectan los requisitos normativos con las condiciones reales de trabajo y la reducción medible del riesgo.",
+
+        "profile-title": "Perfil profesional",
+        "profile-text-1":
+          "Consultor de SST e ingeniería especializado en la prevención de accidentes y enfermedades laborales mediante el control de riesgos químicos, mecánicos y ambientales. La práctica integra ingeniería industrial, ingeniería de seguridad y experiencia de campo en múltiples sectores.",
+        "profile-text-2":
+          "AV Technical Consulting apoya a las organizaciones mediante evaluaciones técnicas, auditorías remotas y presenciales, mapeo de riesgos, diseño de procedimientos y programas de capacitación específicos. El objetivo es traducir la regulación y los estándares en controles de ingeniería y administrativos que funcionen en la operación real y protejan a los trabajadores.",
+
+        "competence-title": "Competencia básica en riesgo laboral",
+        "competence-1":
+          "Exposición química y riesgo de compatibilidad en inventarios y procesos.",
+        "competence-2":
+          "Control de riesgos mecánicos en equipos, herramientas y maniobras críticas.",
+        "competence-3":
+          "Condiciones físicas y ambientales que afectan la salud de los trabajadores.",
+        "competence-4":
+          "Alineación con el SG-SST, programas de ARL y requisitos regulatorios.",
+
+        "services-title": "Servicios Clave de Consultoría",
+        "services-subtitle":
+          "Servicios de consultoría basados en ingeniería, enfocados en prevenir incidentes laborales y eventos de proceso en operaciones que manejan sustancias químicas, equipos mecánicos y peligros físicos significativos.",
+
+        "services-level-1": "Nivel programático",
+        "services-level-2": "Nivel operativo",
+        "services-level-3": "Preparación ante incidentes",
+
+        "services-1-title": "Gestión del Riesgo Químico",
+        "services-1-li-1":
+          "Inventario de sustancias químicas, clasificación de peligros (SGA / ONU) y trazabilidad.",
+        "services-1-li-2":
+          "Mapeo de riesgo por área, tarea y nivel de exposición del trabajador.",
+        "services-1-li-3":
+          "Matrices de compatibilidad y criterios de almacenamiento seguro.",
+        "services-1-li-4":
+          "Procedimientos para manipulación, mezcla, dosificación y disposición segura.",
+
+        "services-2-title": "Inspecciones de Seguridad en Operaciones",
+        "services-2-li-1":
+          "Identificación de peligros mecánicos en equipos, herramientas y procesos.",
+        "services-2-li-2":
+          "Evaluación de condiciones físicas y ambientales (iluminación, ventilación, ruido, etc.).",
+        "services-2-li-3":
+          "Inspección de EPP, recursos de emergencia, señalización y rutas de evacuación.",
+        "services-2-li-4":
+          "Planes de acción priorizados por riesgo, factibilidad y cumplimiento normativo.",
+
+        "services-3-title": "Respuesta a Emergencias y Derrames",
+        "services-3-li-1":
+          "Revisión de planes de emergencia para escenarios químicos y de proceso.",
+        "services-3-li-2":
+          "Diseño y actualización de procedimientos de atención de derrames y guías rápidas.",
+        "services-3-li-3":
+          "Evaluación de kits, equipos, entrenamiento y tiempos de respuesta.",
+        "services-3-li-4":
+          "Análisis post-incidente y seguimiento a acciones correctivas y preventivas.",
+
+        "industries-title": "Industrias y Entornos Atendidos",
+        "industries-subtitle":
+          "La práctica de consultoría adapta el mismo rigor técnico a diferentes realidades en campo, siempre enfocada en la protección del trabajador, la continuidad operacional y el cumplimiento normativo.",
+
+        "industries-1": "Distribuidores agroquímicos y operaciones en campo",
+        "industries-2": "Plantas industriales y talleres de mantenimiento",
+        "industries-3": "Instituciones educativas y laboratorios escolares",
+        "industries-4": "Laboratorios clínicos y de diagnóstico",
+        "industries-5": "Bodegas, centros de distribución y plataformas logísticas",
+        "industries-6": "Pequeñas y medianas empresas industriales",
+
+        "method-title": "Metodología: Del Diagnóstico al Control",
+        "method-subtitle":
+          "Cada proyecto se estructura en fases claras que permiten pasar del reconocimiento de la realidad en campo a la implementación de controles verificables y medibles.",
+
+        "method-1-title": "Diagnóstico Técnico",
+        "method-1-text":
+          "Levantamiento de información sobre procesos, sustancias, tareas y controles existentes. Incluye visitas a campo, revisión documental y entrevistas estructuradas para comprender cómo se ejecuta realmente el trabajo.",
+
+        "method-2-title": "Análisis de Riesgos",
+        "method-2-text":
+          "Identificación de peligros químicos, mecánicos y físicos; análisis de escenarios de exposición y definición de puntos críticos. El análisis conecta el riesgo laboral con impactos en salud, operación y cumplimiento regulatorio.",
+
+        "method-3-title": "Hoja de Ruta e Implementación",
+        "method-3-text":
+          "Diseño de controles de ingeniería, administrativos y de protección personal, procedimientos, listas de verificación y contenidos de capacitación. La hoja de ruta prioriza acciones por riesgo y viabilidad, facilitando seguimiento y auditoría.",
+
+        "contact-title": "Contacto",
+        "contact-intro-1":
+          "Si deseas solicitar una evaluación técnica, discutir un proyecto específico o explorar una colaboración con una ARL o aliado institucional, puedes escribir usando los datos de contacto.",
+        "contact-intro-2":
+          "Cada acompañamiento se dimensiona según la complejidad del proceso, número de sedes y requisitos regulatorios, garantizando que el esfuerzo de consultoría esté alineado con el perfil real de riesgo de la organización y enfocado en prevenir lesiones y enfermedades laborales.",
+
+        "contact-email-label": "Correo electrónico",
+        "contact-phone-label": "Teléfono / WhatsApp",
+        "contact-location-label": "Ubicación",
+        "contact-location":
+          "Bogotá, Colombia – Acompañamiento remoto y visitas presenciales según necesidad.",
+        "contact-focus-label": "Enfoque",
+        "contact-focus":
+          "Prevención de riesgos laborales en operaciones con sustancias químicas, equipos mecánicos y peligros físicos significativos.",
+
+        "wa-label": "¿Tienes un caso puntual? Escríbeme por WhatsApp.",
+        "footer-text":
+          "AV Technical Consulting © 2025 – Consultoría en Seguridad Laboral, Riesgo Químico y de Procesos",
+      },
+
+      en: {
+        "brand-tagline":
+          "Occupational Safety Consulting · Chemical & Mechanical Risk",
+
+        "hero-kicker":
+          "Engineering safety · Chemical expertise · Global solutions",
+
+        "hero-title-1": "Chemical Risk Engineering.",
+        "hero-title-2": " Mechanical Safety.",
+        "hero-title-3": " Advanced Risk Solutions.",
+
+        "hero-subtitle":
+          "Specialized consulting in chemical risk management, occupational disease prevention and mechanical hazard control for industrial, agrochemical, educational, laboratory and logistics environments.",
+
+        "hero-location":
+          "Based in Bogotá, Colombia – remote and on-site support for national and international clients.",
+
+        "hero-cta-primary": "Request a technical assessment",
+        "hero-cta-secondary": "View core occupational risk services",
+
+        "hero-chip-1": "Engineering-driven safety",
+        "hero-chip-2": "Field experience in chemical risk",
+        "hero-chip-3": "Solutions aligned with OSH systems and regulation",
+
+        "hero-panel-label": "Field practice",
+        "hero-panel-title": "Proven Occupational Risk Practice in the Field",
+        "hero-panel-li-1":
+          "Assessment of chemical exposure, compatibility criteria and storage conditions aligned with GHS and UN transport classes.",
+        "hero-panel-li-2":
+          "Mechanical risk analysis in machinery, tools and maintenance operations with emphasis on guarding and safe manoeuvres.",
+        "hero-panel-li-3":
+          "Practical roadmaps that connect regulatory requirements with real working conditions and measurable risk reduction.",
+
+        "profile-title": "Professional Profile",
+        "profile-text-1":
+          "SST & engineering consultant focused on preventing occupational accidents and diseases through chemical, mechanical and environmental risk control. The practice integrates industrial engineering, safety engineering and real field experience across multiple sectors.",
+        "profile-text-2":
+          "AV Technical Consulting supports organizations through technical assessments, remote and on-site audits, risk mapping, procedure design and targeted training programmes. The goal is to translate regulations and standards into engineering and administrative controls that work in real operations and protect workers.",
+
+        "competence-title": "Core competence in occupational risk",
+        "competence-1":
+          "Chemical exposure and compatibility risk in inventories and processes.",
+        "competence-2":
+          "Mechanical hazard control in equipment, tools and critical operations.",
+        "competence-3":
+          "Physical and environmental conditions affecting worker health.",
+        "competence-4":
+          "Alignment with OSH systems, insurer programmes and legal requirements.",
+
+        "services-title": "Core Consulting Services",
+        "services-subtitle":
+          "Engineering-based consulting services focused on preventing occupational incidents and process events in operations that handle chemicals, mechanical equipment and significant physical hazards.",
+
+        "services-level-1": "Programme level",
+        "services-level-2": "Operational level",
+        "services-level-3": "Incident readiness",
+
+        "services-1-title": "Chemical Risk Management",
+        "services-1-li-1":
+          "Chemical inventory, hazard classification (GHS / UN) and traceability.",
+        "services-1-li-2":
+          "Risk mapping by area, task and worker exposure level.",
+        "services-1-li-3":
+          "Compatibility matrices and safe storage criteria.",
+        "services-1-li-4":
+          "Procedures for safe handling, mixing, dosing and disposal.",
+
+        "services-2-title": "Occupational Safety Assessments",
+        "services-2-li-1":
+          "Mechanical hazard identification in equipment, tools and processes.",
+        "services-2-li-2":
+          "Evaluation of physical and environmental conditions (lighting, ventilation, noise, etc.).",
+        "services-2-li-3":
+          "Inspection of PPE, emergency resources, signage and evacuation routes.",
+        "services-2-li-4":
+          "Action plans prioritised by risk, feasibility and legal compliance.",
+
+        "services-3-title": "Emergency & Spill Response",
+        "services-3-li-1":
+          "Review of emergency plans for chemical and process scenarios.",
+        "services-3-li-2":
+          "Design and update of spill response procedures and quick guides.",
+        "services-3-li-3":
+          "Evaluation of kits, equipment, training and response times.",
+        "services-3-li-4":
+          "Post-incident analysis and follow-up of corrective and preventive actions.",
+
+        "industries-title": "Industries and Environments Served",
+        "industries-subtitle":
+          "The consulting practice applies the same technical rigour to different realities in the field, always focused on worker protection, operational continuity and regulatory compliance.",
+
+        "industries-1":
+          "Agrochemical distributors and field operations",
+        "industries-2":
+          "Industrial plants and maintenance workshops",
+        "industries-3":
+          "Educational institutions and school laboratories",
+        "industries-4":
+          "Clinical and diagnostic laboratories",
+        "industries-5":
+          "Warehouses, distribution centres and logistics platforms",
+        "industries-6":
+          "Small and medium-size industrial enterprises",
+
+        "method-title": "Methodology: From Diagnosis to Control",
+        "method-subtitle":
+          "Each engagement is structured in clear phases that move from understanding real working conditions to implementing verifiable, measurable controls.",
+
+        "method-1-title": "Technical Diagnosis",
+        "method-1-text":
+          "Collection of information on processes, substances, tasks and existing controls. Includes site visits, document review and structured interviews to understand how work is actually performed.",
+
+        "method-2-title": "Risk Analysis",
+        "method-2-text":
+          "Identification of chemical, mechanical and physical hazards; evaluation of exposure scenarios and definition of critical points. The analysis links occupational risk with health, operational and regulatory impacts.",
+
+        "method-3-title": "Control Roadmap & Implementation",
+        "method-3-text":
+          "Design of engineering, administrative and PPE controls, procedures, checklists and training content. The roadmap prioritises actions by risk and feasibility, making follow-up and audits easier.",
+
+        "contact-title": "Contact",
+        "contact-intro-1":
+          "To request a technical assessment, discuss a specific project or explore collaboration with an insurer or institutional partner, please reach out using the contact details below.",
+        "contact-intro-2":
+          "Each engagement is scoped based on process complexity, number of sites and regulatory requirements, ensuring the consulting effort is aligned with the real risk profile of the organisation and focused on preventing occupational injuries and diseases.",
+
+        "contact-email-label": "Email",
+        "contact-phone-label": "Phone / WhatsApp",
+        "contact-location-label": "Location",
+        "contact-location":
+          "Bogotá, Colombia – Remote support and on-site visits as required.",
+        "contact-focus-label": "Focus",
+        "contact-focus":
+          "Prevention of occupational risks in operations involving chemicals, mechanical equipment and significant physical hazards.",
+
+        "wa-label": "Have a specific case? Message me on WhatsApp.",
+        "footer-text":
+          "AV Technical Consulting © 2025 – Occupational & Process Safety Consulting",
+      },
+    };
+
+    let currentLang = "es";
+
+    function applyTranslations(lang) {
+      const dict = translations[lang];
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      // Actualizar WhatsApp link
+      const waLink = document.getElementById("wa-link");
+      if (lang === "es") {
+        waLink.href =
+          "https://wa.me/573153937116?text=Hola%20Aliomar%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20consultor%C3%ADa%20en%20riesgos.";
+      } else {
+        waLink.href =
+          "https://wa.me/573153937116?text=Hi%20Aliomar%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20occupational%20and%20process%20safety%20consulting%20services.";
+      }
+    }
+
+    document.getElementById("btn-es").addEventListener("click", () => {
+      if (currentLang !== "es") {
+        currentLang = "es";
+        document.getElementById("btn-es").classList.add("active");
+        document.getElementById("btn-en").classList.remove("active");
+        applyTranslations("es");
+      }
+    });
+
+    document.getElementById("btn-en").addEventListener("click", () => {
+      if (currentLang !== "en") {
+        currentLang = "en";
+        document.getElementById("btn-en").classList.add("active");
+        document.getElementById("btn-es").classList.remove("active");
+        applyTranslations("en");
+      }
+    });
+
+    // Inicializar en español
+    applyTranslations("es");
+  </script>
 </body>
 </html>
+
