@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AV Risk Engineering – Occupational & Chemical Risk Engineering</title>
-
   <style>
     :root {
       --bg-dark: #002b3f;
@@ -48,46 +47,7 @@
       min-height: 100vh;
     }
 
-    main {
-      flex: 1;
-    }
-
-    section {
-      padding: 60px 20px;
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .section-header {
-      margin-bottom: 30px;
-    }
-
-    .section-kicker {
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #00856e;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text-main);
-    }
-
-    .section-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-soft);
-      max-width: 720px;
-    }
-
-    /* ================= HERO ================= */
+    /* ========== HERO ========== */
 
     .hero {
       position: relative;
@@ -197,6 +157,47 @@
       background: rgba(0, 43, 63, 0.6);
     }
 
+    /* ========== SECCIONES GENERALES ========== */
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00856e;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .section-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+      max-width: 720px;
+    }
+
     /* ========== PERFIL PROFESIONAL ========== */
 
     .profile-section {
@@ -264,37 +265,36 @@
       background: var(--bg-light);
       border-top: 1px solid var(--border-soft);
       border-bottom: 1px solid var(--border-soft);
-      padding: 60px 20px;
     }
 
     .cards-row {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 22px;
     }
 
     .card {
-      background: #ffffff;
+      background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: 24px 22px 22px;
+      padding: 22px 22px 20px;
       box-shadow: var(--shadow-card);
       border: 1px solid rgba(210, 222, 232, 0.85);
     }
 
     .card-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
       background: rgba(0, 184, 148, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
 
     .card-icon svg {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       display: block;
     }
 
@@ -308,24 +308,24 @@
     }
 
     .card-title {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: var(--text-main);
     }
 
     .card ul {
       list-style: none;
-      margin-top: 4px;
-      padding: 0;
-      font-size: 0.93rem;
+      margin-top: 6px;
+      padding-left: 0;
+      font-size: 0.92rem;
       color: var(--text-soft);
     }
 
     .card li {
+      margin-bottom: 6px;
+      padding-left: 16px;
       position: relative;
-      padding-left: 14px;
-      margin-bottom: 7px;
     }
 
     .card li::before {
@@ -335,8 +335,8 @@
       top: 8px;
       width: 6px;
       height: 6px;
+      border-radius: 999px;
       background: var(--accent);
-      border-radius: 50%;
     }
 
     /* ========== INDUSTRIAS ========== */
@@ -614,7 +614,6 @@
     }
   </style>
 </head>
-
 <body data-lang="en">
   <div class="page-wrapper">
     <!-- SWITCH IDIOMA -->
@@ -786,13 +785,11 @@
       <!-- ========== SERVICIOS CENTRALES ========== -->
       <section class="services-section" id="services">
         <div class="section-inner">
-
           <div class="section-header">
             <div class="section-kicker">
               <span class="lang lang-en">Core Consulting Services</span>
               <span class="lang lang-es">Servicios clave de consultoría</span>
             </div>
-
             <h2 class="section-title">
               <span class="lang lang-en">
                 Engineering-based services focused on preventing occupational incidents
@@ -802,7 +799,6 @@
                 incidentes laborales y eventos de proceso
               </span>
             </h2>
-
             <p class="section-subtitle">
               <span class="lang lang-en">
                 Services are designed for operations that handle chemicals, mechanical
@@ -819,9 +815,10 @@
           </div>
 
           <div class="cards-row">
-            <!-- TARJETA 1 -->
+            <!-- TARJETA 1 — Riesgo químico -->
             <article class="card">
-              <div class="card-icon">
+              <div class="card-icon" aria-hidden="true">
+                <!-- Icono laboratorio / matraz -->
                 <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                   <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M16 7h8" />
@@ -831,40 +828,62 @@
                   </g>
                 </svg>
               </div>
-
               <div class="card-label">
                 <span class="lang lang-en">Program Level</span>
                 <span class="lang lang-es">Nivel programático</span>
               </div>
-
               <h3 class="card-title">
                 <span class="lang lang-en">Chemical Risk Management</span>
                 <span class="lang lang-es">Gestión del riesgo químico</span>
               </h3>
-
               <ul>
                 <li>
-                  <span class="lang lang-en">Chemical inventory and hazard classification (GHS / UN).</span>
-                  <span class="lang lang-es">Inventario de sustancias químicas y clasificación de peligros (SGA / ONU).</span>
+                  <span class="lang lang-en">
+                    Master chemical inventory and hazard classification (GHS / UN).
+                  </span>
+                  <span class="lang lang-es">
+                    Inventario maestro de sustancias químicas y clasificación de peligros (SGA / ONU).
+                  </span>
                 </li>
                 <li>
-                  <span class="lang lang-en">Risk mapping by area, task and worker exposure.</span>
-                  <span class="lang lang-es">Mapeo de riesgo por área, tarea y nivel de exposición del trabajador.</span>
+                  <span class="lang lang-en">
+                    Hazard and exposure identification by process, area, task and substance.
+                  </span>
+                  <span class="lang lang-es">
+                    Identificación de peligros y exposición por proceso, área, tarea y sustancia.
+                  </span>
                 </li>
                 <li>
-                  <span class="lang lang-en">Compatibility matrices and safe storage criteria.</span>
-                  <span class="lang lang-es">Matrices de compatibilidad y criterios de almacenamiento seguro.</span>
+                  <span class="lang lang-en">
+                    Compatibility matrices, safe storage criteria and containment systems.
+                  </span>
+                  <span class="lang lang-es">
+                    Matrices de compatibilidad, criterios de almacenamiento seguro y sistemas de contención.
+                  </span>
                 </li>
                 <li>
-                  <span class="lang lang-en">Procedures for safe handling, mixing and transfer.</span>
-                  <span class="lang lang-es">Procedimientos para manipulación, mezcla, dosificación y transferencia segura.</span>
+                  <span class="lang lang-en">
+                    Standard procedures for handling, mixing, transfer and internal transport.
+                  </span>
+                  <span class="lang lang-es">
+                    Procedimientos normalizados para manipulación, mezcla, transferencia y transporte interno.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Programmed inspections in chemical rooms, warehouses and laboratories.
+                  </span>
+                  <span class="lang lang-es">
+                    Inspecciones programáticas en cuartos de químicos, bodegas y laboratorios.
+                  </span>
                 </li>
               </ul>
             </article>
 
-            <!-- TARJETA 2 -->
+            <!-- TARJETA 2 — Riesgo mecánico / operativo -->
             <article class="card">
-              <div class="card-icon">
+              <div class="card-icon" aria-hidden="true">
+                <!-- Icono engranaje + escudo -->
                 <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                   <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="14" cy="14" r="4" />
@@ -875,21 +894,18 @@
                   </g>
                 </svg>
               </div>
-
               <div class="card-label">
                 <span class="lang lang-en">Operational Level</span>
                 <span class="lang lang-es">Nivel operativo</span>
               </div>
-
               <h3 class="card-title">
-                <span class="lang lang-en">Occupational Safety Assessments</span>
-                <span class="lang lang-es">Inspecciones de seguridad en operaciones</span>
+                <span class="lang lang-en">Mechanical &amp; Operational Risk Management</span>
+                <span class="lang lang-es">Gestión del riesgo mecánico y operativo</span>
               </h3>
-
               <ul>
                 <li>
                   <span class="lang lang-en">
-                    Mechanical hazard identification in equipment, tools and processes.
+                    Identification of mechanical hazards in equipment, tools and processes.
                   </span>
                   <span class="lang lang-es">
                     Identificación de peligros mecánicos en equipos, herramientas y procesos.
@@ -897,34 +913,43 @@
                 </li>
                 <li>
                   <span class="lang lang-en">
-                    Evaluation of physical and environmental conditions.
+                    Assessment of physical and environmental conditions that affect safe work.
                   </span>
                   <span class="lang lang-es">
-                    Evaluación de condiciones físicas y ambientales (iluminación, ventilación, ruido, etc.).
+                    Evaluación de condiciones físicas y ambientales que afectan la seguridad operativa.
                   </span>
                 </li>
                 <li>
                   <span class="lang lang-en">
-                    Inspection of PPE, emergency resources and signage.
+                    Verification of guards, interlocks, emergency stops and engineering controls.
                   </span>
                   <span class="lang lang-es">
-                    Inspección de uso de EPP, recursos de emergencia y señalización.
+                    Verificación de resguardos, enclavamientos, paros de emergencia y controles de ingeniería.
                   </span>
                 </li>
                 <li>
                   <span class="lang lang-en">
-                    Action plans prioritized by risk, feasibility and compliance.
+                    Implementation and audit of lockout/tagout (LOTO) for hazardous energies.
                   </span>
                   <span class="lang lang-es">
-                    Planes de acción priorizados por riesgo, factibilidad y cumplimiento normativo.
+                    Implementación y auditoría de bloqueo y etiquetado de energías peligrosas (LOTO).
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Operational inspections and risk-based action plans in field operations.
+                  </span>
+                  <span class="lang lang-es">
+                    Inspecciones operativas y planes de acción priorizados por riesgo en la operación en campo.
                   </span>
                 </li>
               </ul>
             </article>
 
-            <!-- TARJETA 3 -->
+            <!-- TARJETA 3 — Emergencias y derrames -->
             <article class="card">
-              <div class="card-icon">
+              <div class="card-icon" aria-hidden="true">
+                <!-- Icono triángulo + gota / derrame -->
                 <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                   <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M8 27.5 18.5 9a1.6 1.6 0 0 1 2.8 0L31.8 27.5a1.6 1.6 0 0 1-1.4 2.4H9.4A1.6 1.6 0 0 1 8 27.5z" />
@@ -934,48 +959,53 @@
                   </g>
                 </svg>
               </div>
-
               <div class="card-label">
                 <span class="lang lang-en">Incident Readiness</span>
                 <span class="lang lang-es">Preparación ante incidentes</span>
               </div>
-
               <h3 class="card-title">
-                <span class="lang lang-en">Emergency &amp; Spill Response</span>
-                <span class="lang lang-es">Respuesta a emergencias y derrames</span>
+                <span class="lang lang-en">Emergency, Spill &amp; Process Event Response</span>
+                <span class="lang lang-es">Respuesta a emergencias, derrames y fallas operacionales</span>
               </h3>
-
               <ul>
                 <li>
                   <span class="lang lang-en">
-                    Review of emergency plans for chemical and process scenarios.
+                    Review and update of emergency plans for chemical, mechanical and process scenarios.
                   </span>
                   <span class="lang lang-es">
-                    Revisión de planes de emergencia para escenarios químicos y de proceso.
+                    Revisión y actualización de planes de emergencia para escenarios químicos, mecánicos y de proceso.
                   </span>
                 </li>
                 <li>
                   <span class="lang lang-en">
-                    Design of spill response procedures and quick guides.
+                    Design of spill response procedures, guides and incident activation checklists.
                   </span>
                   <span class="lang lang-es">
-                    Diseño de procedimientos de atención de derrames y guías rápidas.
+                    Diseño de procedimientos de atención de derrames, guías rápidas y listas de activación.
                   </span>
                 </li>
                 <li>
                   <span class="lang lang-en">
-                    Evaluation of kits, equipment, training and response times.
+                    Evaluation of spill kits, specialized PPE, routes and response times.
                   </span>
                   <span class="lang lang-es">
-                    Evaluación de kits, equipos, entrenamiento y tiempos de respuesta.
+                    Evaluación de kits de derrames, EPP especializado, rutas y tiempos de respuesta.
                   </span>
                 </li>
                 <li>
                   <span class="lang lang-en">
-                    Post-incident analysis and corrective tracking.
+                    Drills, training for emergency teams and post-incident analysis.
                   </span>
                   <span class="lang lang-es">
-                    Análisis post-incidente y seguimiento a acciones correctivas y preventivas.
+                    Simulacros, entrenamiento a brigadas y análisis post-incidente.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Corrective and preventive actions integrated into both risk lines (chemical and mechanical).
+                  </span>
+                  <span class="lang lang-es">
+                    Acciones correctivas y preventivas integradas a las dos líneas de riesgo (químico y mecánico).
                   </span>
                 </li>
               </ul>
@@ -1277,7 +1307,6 @@
     <span class="lang lang-es">Escríbeme por WhatsApp</span>
   </a>
 
-  <!-- SCRIPT SWITCH IDIOMA -->
   <script>
     (function () {
       const body = document.body;
