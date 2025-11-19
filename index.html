@@ -651,6 +651,114 @@
   cursor: pointer;
   border: none;
 }
+    /* ===== SUBPÁGINA – GESTIÓN DEL RIESGO QUÍMICO ===== */
+
+.subpage-section {
+  display: none;
+  background: var(--bg-light);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.subpage-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+}
+
+.subpage-title {
+  font-size: 1.7rem;
+  font-weight: 750;
+  text-align: center;
+  margin-bottom: 18px;
+  color: var(--text-main);
+}
+
+.subpage-subtitle {
+  font-size: 0.98rem;
+  text-align: center;
+  color: var(--text-soft);
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+
+.subpage-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.subpage-text {
+  flex: 1 1 360px;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.subpage-text p {
+  margin-bottom: 10px;
+}
+
+.subpage-text p:last-child {
+  margin-bottom: 0;
+}
+
+.subpage-image {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subpage-image img {
+  width: 100%;
+  max-width: 460px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  display: block;
+}
+
+.subpage-caption {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #75889a;
+  text-align: center;
+}
+
+.subpage-actions {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.back-btn {
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #003024;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0, 184, 148, 0.35);
+  transition: all 0.18s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0, 184, 148, 0.45);
+}
+
+@media (max-width: 768px) {
+  .subpage-layout {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .subpage-subtitle {
+    text-align: left;
+  }
+}
   </style>
 </head>
 <body data-lang="en">
@@ -1315,62 +1423,93 @@
         AV Ingeniería del Riesgo © 2025 – Ingeniería de riesgos químicos y laborales
         • Consultoría en seguridad de procesos y riesgo ocupacional
       </span>
-      <!-- ========== SUBPÁGINA: GESTIÓN DEL RIESGO QUÍMICO ========== -->
-<section id="sub-chemical-risk" style="display:none; padding:60px 20px; max-width:900px; margin:auto;">
+<!-- ========== SUBPÁGINA: GESTIÓN DEL RIESGO QUÍMICO ========== -->
+<section id="sub-chemical-risk" class="subpage-section">
+  <div class="subpage-inner">
+    <h2 class="subpage-title">
+      <span class="lang lang-es">Gestión del riesgo químico</span>
+      <span class="lang lang-en">Chemical Risk Management</span>
+    </h2>
 
-  <h2 class="lang lang-es">Gestión del riesgo químico</h2>
-  <h2 class="lang lang-en">Chemical Risk Management</h2>
+    <p class="subpage-subtitle">
+      <span class="lang lang-es">
+        Una mirada integrada que conecta la exposición química con la salud ocupacional,
+        la seguridad de procesos y la protección ambiental.
+      </span>
+      <span class="lang lang-en">
+        An integrated approach that links chemical exposure with occupational health,
+        process safety and environmental protection.
+      </span>
+    </p>
 
-  <p class="lang lang-es" style="margin-top:12px;">
-    Una mirada integrada que conecta la exposición química con la salud ocupacional, la seguridad de procesos y la protección ambiental.
-  </p>
-  <p class="lang lang-en" style="margin-top:12px;">
-    An integrated approach that links chemical exposure with occupational health, process safety, and environmental protection.
-  </p>
+    <div class="subpage-layout">
+      <!-- TEXTO -->
+      <div class="subpage-text">
+        <p>
+          <span class="lang lang-es">
+            La operación de aspersión asistida por dron con énfasis en control de la exposición,
+            ventilación natural y uso adecuado de EPP permite reducir la deriva, mejorar la
+            trazabilidad del producto y minimizar la exposición dérmica e inhalatoria.
+          </span>
+          <span class="lang lang-en">
+            Drone-assisted spraying operations with proper exposure control, natural ventilation
+            and adequate PPE help reduce drift, improve product traceability and minimize dermal
+            and inhalation exposure.
+          </span>
+        </p>
 
+        <p>
+          <span class="lang lang-es">
+            A partir de matrices de exposición, mapas de riesgo por tarea y revisión de fichas
+            de datos de seguridad, es posible establecer criterios de selección de tecnologías
+            de aspersión, selección de EPP, procedimientos de mezcla y carga, y protocolos de
+            limpieza y disposición de envases que mantengan la operación dentro de límites de
+            exposición aceptables.
+          </span>
+          <span class="lang lang-en">
+            Using exposure matrices, task-based risk maps and SDS review, it is possible to define
+            criteria for spray technology selection, PPE selection, mixing and loading procedures,
+            and container cleaning and disposal protocols that keep operations within acceptable
+            exposure limits.
+          </span>
+        </p>
+
+        <p>
+          <span class="lang lang-es">
+            La articulación con el SG-SST y los requisitos ambientales asegura que las decisiones
+            técnicas sobre productos, equipos de aplicación y prácticas de trabajo se traduzcan en
+            controles verificables, medibles y auditables en campo.
+          </span>
+          <span class="lang lang-en">
+            Alignment with OSH management systems and environmental requirements ensures that
+            technical decisions on products, application equipment and work practices become
+            controls that are verifiable, measurable and auditable in the field.
+          </span>
+        </p>
+      </div>
+
+      <!-- IMAGEN -->
+      <figure class="subpage-image">
+      <div class="subpage-image">
   <img 
     src="chemical-risk-drone-operator.jpg"
-    alt="Operación segura de dron en aspersión agrícola"
-    style="width:100%; max-width:720px; margin:30px auto; display:block; border-radius:12px;"
+    alt="Operación segura de aspersión con dron — protección respiratoria y monitoreo digital"
   />
+  <div class="subpage-caption lang lang-es">
+    Operación de aspersión asistida con dron con protección respiratoria y monitoreo digital del proceso.
+  </div>
+  <div class="subpage-caption lang lang-en">
+    Drone-assisted spraying operation with respiratory protection and digital process monitoring.
+  </div>
+</div>
 
-  <p class="lang lang-es">
-    La operación de aspersión asistida por dron con énfasis en control de exposición, ventilación natural y uso adecuado de EPP permite reducir la deriva, mejorar la trazabilidad del producto y minimizar la exposición dérmica e inhalatoria.
-  </p>
-  <p class="lang lang-en">
-    Drone-assisted spraying operations with proper exposure control, natural ventilation and adequate PPE reduce drift, improve product traceability and minimize dermal and inhalation exposure.
-  </p>
-
-  <p class="lang lang-es">
-    Mediante matrices de exposición, mapas de riesgo y revisión de fichas de datos de seguridad, es posible establecer criterios de selección de EPP, procedimientos seguros de mezcla y carga, y prácticas de limpieza y disposición de envases dentro de límites de exposición aceptables.
-  </p>
-  <p class="lang lang-en">
-    Using exposure matrices, risk maps and SDS review, it is possible to define PPE selection criteria, safe handling and charging procedures, and equipment-cleaning practices within acceptable exposure limits.
-  </p>
-
-  <p class="lang lang-es">
-    La articulación con el SG-SST y los requisitos ambientales asegura decisiones técnicas verificables, medibles y auditables en campo.
-  </p>
-  <p class="lang lang-en">
-    Alignment with OSH management systems and environmental requirements ensures technical decisions that are verifiable, measurable and auditable in the field.
-  </p>
-
-  <button onclick="returnHome()" 
-    style="
-      margin-top:35px; 
-      padding:14px 30px; 
-      font-size:1rem; 
-      background:#00b894; 
-      color:white; 
-      border-radius:8px; 
-      border:none; 
-      cursor:pointer;
-    ">
-    <span class="lang lang-es">Volver al inicio</span>
-    <span class="lang lang-en">Return to Home</span>
-  </button>
-
-</section>
+    <div class="subpage-actions">
+      <button class="back-btn" onclick="returnHome()">
+        <span class="lang lang-es">Volver al inicio</span>
+        <span class="lang lang-en">Return to home</span>
+      </button>
+    </div>
+  </div>
 </section>
     </footer>
   </div>
