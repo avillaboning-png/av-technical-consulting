@@ -454,34 +454,40 @@
       font-weight: 600;
     }
 
-    /* ========== BOTÓN FLOTANTE WHATSAPP ========== */
+    .contact-info a {
+      color: #007b68;
+    }
 
-    .whatsapp-float {
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== WHATSAPP FLOAT ========== */
+
+    .whatsapp-fab {
       position: fixed;
-      right: 22px;
-      bottom: 22px;
-      width: 54px;
-      height: 54px;
-      border-radius: 999px;
-      background: #25d366;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
-      display: flex;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #25d366;
+      color: #003014;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+      border: none;
       cursor: pointer;
-      z-index: 50;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
-    .whatsapp-float span {
-      font-size: 26px;
-      color: #ffffff;
-      line-height: 1;
-    }
-
-    .whatsapp-float:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+    .whatsapp-fab:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+      background: #20c75d;
     }
 
     /* ========== FOOTER ========== */
@@ -539,9 +545,11 @@
         font-size: 1.4rem;
       }
 
-      .whatsapp-float {
-        right: 16px;
-        bottom: 16px;
+      .whatsapp-fab {
+        right: 14px;
+        bottom: 14px;
+        font-size: 0.82rem;
+        padding: 8px 12px;
       }
     }
   </style>
@@ -565,13 +573,7 @@
         </p>
 
         <div class="hero-actions">
-          <!-- Botón principal: contacto directo por WhatsApp -->
-          <a
-            href="https://wa.me/573153937116?text=Hi%20Aliomar,%20I%27d%20like%20to%20request%20a%20technical%20assessment%20for%20our%20operations."
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#contact" class="btn btn-primary">
             Request a Technical Assessment
           </a>
           <a href="#services" class="btn btn-secondary">
@@ -792,12 +794,8 @@
                 </a>
               </p>
               <p>
-                <span class="contact-label">WhatsApp:&nbsp;</span>
-                <a
-                  href="https://wa.me/573153937116?text=Hi%20Aliomar,%20I%27d%20like%20to%20discuss%20occupational%20risk%20consulting."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <span class="contact-label">Phone / WhatsApp:&nbsp;</span>
+                <a href="https://wa.me/573153937116" target="_blank" rel="noopener">
                   +57 315 393 7116
                 </a>
               </p>
@@ -820,17 +818,16 @@
       AV Technical Consulting © 2025 – Occupational &amp; Chemical Risk Engineering
       • Occupational &amp; Process Safety Consulting
     </footer>
-  </div>
 
-  <!-- Botón flotante de WhatsApp -->
-  <a
-    href="https://wa.me/573153937116?text=Hi%20Aliomar,%20I%27d%20like%20to%20talk%20about%20chemical%20and%20occupational%20risk%20engineering%20support."
-    class="whatsapp-float"
-    aria-label="Contact via WhatsApp"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span>☎</span>
-  </a>
+    <!-- Botón flotante de WhatsApp -->
+    <a
+      class="whatsapp-fab"
+      href="https://wa.me/573153937116?text=Hola%20Aliomar,%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20en%20riesgos%20laborales."
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp
+    </a>
+  </div>
 </body>
 </html>
