@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AV Risk Engineering – Occupational & Chemical Risk Engineering</title>
+
   <style>
     :root {
       --bg-dark: #002b3f;
@@ -47,7 +48,46 @@
       min-height: 100vh;
     }
 
-    /* ========== HERO ========== */
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #00856e;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .section-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+      max-width: 720px;
+    }
+
+    /* ================= HERO ================= */
 
     .hero {
       position: relative;
@@ -108,13 +148,6 @@
       line-height: 1.12;
     }
 
-    .hero-text {
-      font-size: 0.98rem;
-      max-width: 720px;
-      color: rgba(232, 245, 249, 0.96);
-      margin-bottom: 26px;
-    }
-
     .hero-location {
       font-size: 0.9rem;
       color: rgba(220, 238, 244, 0.92);
@@ -162,47 +195,6 @@
 
     .btn-secondary:hover {
       background: rgba(0, 43, 63, 0.6);
-    }
-
-    /* ========== SECCIONES GENERALES ========== */
-
-    main {
-      flex: 1;
-    }
-
-    section {
-      padding: 60px 20px;
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .section-header {
-      margin-bottom: 30px;
-    }
-
-    .section-kicker {
-      font-size: 0.85rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #00856e;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text-main);
-    }
-
-    .section-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-soft);
-      max-width: 720px;
     }
 
     /* ========== PERFIL PROFESIONAL ========== */
@@ -266,263 +258,87 @@
       top: 0;
     }
 
-  <!-- ========== SERVICIOS CENTRALES (CSS + HTML COMPLETO) ========== -->
+    /* ========== SERVICIOS CENTRALES ========== */
 
-<style>
-/* ========== SERVICIOS CENTRALES ========== */
+    .services-section {
+      background: var(--bg-light);
+      border-top: 1px solid var(--border-soft);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 60px 20px;
+    }
 
-.services-section {
-  background: var(--bg-light);
-  border-top: 1px solid var(--border-soft);
-  border-bottom: 1px solid var(--border-soft);
-}
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
 
-.cards-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 24px 22px 22px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(210, 222, 232, 0.85);
+    }
 
-.card {
-  background: var(--card-bg);
-  border-radius: var(--radius-lg);
-  padding: 22px 22px 20px;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(210, 222, 232, 0.85);
-}
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(0, 184, 148, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
 
-/* Iconos proporcionados – tamaño visual óptimo */
-.card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(0, 184, 148, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-}
+    .card-icon svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
 
-.card-icon svg {
-  width: 30px;
-  height: 30px;
-  display: block;
-}
+    .card-label {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #006c5a;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
 
-.card-label {
-  font-size: 0.86rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #006c5a;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
+    .card-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
 
-.card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text-main);
-}
+    .card ul {
+      list-style: none;
+      margin-top: 4px;
+      padding: 0;
+      font-size: 0.93rem;
+      color: var(--text-soft);
+    }
 
-.card ul {
-  list-style: none;
-  margin-top: 6px;
-  padding-left: 0;
-  font-size: 0.92rem;
-  color: var(--text-soft);
-}
+    .card li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 7px;
+    }
 
-.card li {
-  margin-bottom: 6px;
-  padding-left: 16px;
-  position: relative;
-}
+    .card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
 
-.card li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--accent);
-}
-</style>
-
-<section class="services-section" id="services">
-  <div class="section-inner">
-
-    <div class="section-header">
-      <div class="section-kicker">
-        <span class="lang lang-en">Core Consulting Services</span>
-        <span class="lang lang-es">Servicios clave de consultoría</span>
-      </div>
-
-      <h2 class="section-title">
-        <span class="lang lang-en">
-          Engineering-based services focused on preventing occupational incidents
-        </span>
-        <span class="lang lang-es">
-          Servicios de consultoría basados en ingeniería, enfocados en prevenir
-          incidentes laborales y eventos de proceso
-        </span>
-      </h2>
-
-      <p class="section-subtitle">
-        <span class="lang lang-en">
-          Services are designed for operations that handle chemicals, mechanical
-          equipment and significant physical hazards, ensuring worker protection,
-          operational continuity and regulatory compliance.
-        </span>
-        <span class="lang lang-es">
-          Los servicios están diseñados para operaciones que manejan sustancias
-          químicas, equipos mecánicos y peligros físicos significativos, asegurando
-          la protección de los trabajadores, la continuidad operativa y el
-          cumplimiento normativo.
-        </span>
-      </p>
-    </div>
-
-    <!-- ======== TARJETAS ======== -->
-    <div class="cards-row">
-
-      <!-- ▬▬▬ TARJETA 1 — Riesgo Químico ▬▬▬ -->
-      <article class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 7h8" />
-              <path d="M18 7v8.5l-5.2 9.2a4.5 4.5 0 0 0 3.9 6.8h6.6a4.5 4.5 0 0 0 3.9-6.8L22 15.5V7" />
-              <path d="M15 23h10" />
-              <path d="M16 26h8" />
-            </g>
-          </svg>
-        </div>
-
-        <div class="card-label">
-          <span class="lang lang-en">Program Level</span>
-          <span class="lang lang-es">Nivel programático</span>
-        </div>
-
-        <h3 class="card-title">
-          <span class="lang lang-en">Chemical Risk Management</span>
-          <span class="lang lang-es">Gestión del riesgo químico</span>
-        </h3>
-
-        <ul>
-          <li>
-            <span class="lang lang-en">Chemical inventory and hazard classification (GHS / UN).</span>
-            <span class="lang lang-es">Inventario de sustancias químicas y clasificación de peligros (SGA / ONU).</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Risk mapping by area, task and worker exposure.</span>
-            <span class="lang lang-es">Mapeo de riesgo por área, tarea y nivel de exposición del trabajador.</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Compatibility matrices and safe storage criteria.</span>
-            <span class="lang lang-es">Matrices de compatibilidad y criterios de almacenamiento seguro.</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Procedures for safe handling, mixing and transfer.</span>
-            <span class="lang lang-es">Procedimientos para manipulación, mezcla, dosificación y transferencia segura.</span>
-          </li>
-        </ul>
-      </article>
-
-      <!-- ▬▬▬ TARJETA 2 — Operativo ▬▬▬ -->
-      <article class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="14" cy="14" r="4" />
-              <path d="M14 7v2.2M14 18.8V21M7 14h2.2M18.8 14H21" />
-              <path d="M9.4 9.4l1.5 1.5M17.1 17.1l1.5 1.5M9.4 18.6l1.5-1.5M17.1 10.9l1.5-1.5" />
-              <path d="M23 11.5l6 2.2v6.3c0 3-2.2 5.8-6 7.5-3.8-1.7-6-4.5-6-7.5v-6.3l6-2.2z" />
-              <path d="M21.5 19.5l2.1 2.1 3.4-3.6" />
-            </g>
-          </svg>
-        </div>
-
-        <div class="card-label">
-          <span class="lang lang-en">Operational Level</span>
-          <span class="lang lang-es">Nivel operativo</span>
-        </div>
-
-        <h3 class="card-title">
-          <span class="lang lang-en">Occupational Safety Assessments</span>
-          <span class="lang lang-es">Inspecciones de seguridad en operaciones</span>
-        </h3>
-
-        <ul>
-          <li>
-            <span class="lang lang-en">Mechanical hazard identification in equipment, tools and processes.</span>
-            <span class="lang lang-es">Identificación de peligros mecánicos en equipos, herramientas y procesos.</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Evaluation of physical and environmental conditions.</span>
-            <span class="lang lang-es">Evaluación de condiciones físicas y ambientales (iluminación, ventilación, ruido, etc.).</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Inspection of PPE, emergency resources and signage.</span>
-            <span class="lang lang-es">Inspección de uso de EPP, recursos de emergencia y señalización.</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Risk-based and feasibility-based action plans.</span>
-            <span class="lang lang-es">Planes de acción priorizados por riesgo y factibilidad.</span>
-          </li>
-        </ul>
-      </article>
-
-      <!-- ▬▬▬ TARJETA 3 — Emergencias ▬▬▬ -->
-      <article class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 27.5 18.5 9a1.6 1.6 0 0 1 2.8 0L31.8 27.5a1.6 1.6 0 0 1-1.4 2.4H9.4A1.6 1.6 0 0 1 8 27.5z" />
-              <path d="M20 16v6" />
-              <circle cx="20" cy="25" r="1.2" />
-              <path d="M26.5 14.5c1.8 1.7 3 3.7 3 5.7a4.3 4.3 0 0 1-8.6 0c0-2 1.2-4 3-5.7l1.3-1.3z" />
-            </g>
-          </svg>
-        </div>
-
-        <div class="card-label">
-          <span class="lang lang-en">Incident Readiness</span>
-          <span class="lang lang-es">Preparación ante incidentes</span>
-        </div>
-
-        <h3 class="card-title">
-          <span class="lang lang-en">Emergency &amp; Spill Response</span>
-          <span class="lang lang-es">Respuesta a emergencias y derrames</span>
-        </h3>
-
-        <ul>
-          <li>
-            <span class="lang lang-en">Review of emergency plans for chemical and process scenarios.</span>
-            <span class="lang lang-es">Revisión de planes de emergencia para escenarios químicos y de proceso.</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Design of spill response procedures and quick guides.</span>
-            <span class="lang lang-es">Diseño de procedimientos de atención de derrames y guías rápidas.</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Evaluation of kits, equipment, training and response times.</span>
-            <span class="lang lang-es">Evaluación de kits, equipos, entrenamiento y tiempos de respuesta.</span>
-          </li>
-          <li>
-            <span class="lang lang-en">Post-incident analysis and corrective tracking.</span>
-            <span class="lang lang-es">Análisis post-incidente y seguimiento a acciones correctivas y preventivas.</span>
-          </li>
-        </ul>
-      </article>
-
-    </div>
-  </div>
-</section>
-  
-    
     /* ========== INDUSTRIAS ========== */
 
     .industries-section {
@@ -798,6 +614,7 @@
     }
   </style>
 </head>
+
 <body data-lang="en">
   <div class="page-wrapper">
     <!-- SWITCH IDIOMA -->
@@ -813,30 +630,33 @@
           <span class="lang lang-en">AV RISK ENGINEERING</span>
           <span class="lang lang-es">AV INGENIERÍA DEL RIESGO</span>
         </div>
-       <div class="hero-subtitle">
-  <span class="lang lang-en">
-    Chemical and Mechanical Risk Engineering. Chemical Safety. Occupational Protection.
-  </span>
-  <span class="lang lang-es">
-    Ingeniería del riesgo químico y mecánico. Seguridad química. Protección ocupacional.
-  </span>
-</div>
-<h1 class="hero-title">
-  <span class="lang lang-en">
-    Specialized engineering applied to chemical and mechanical risk
-  </span>
-  <span class="lang lang-es">
-    Ingeniería especializada aplicada al riesgo químico y mecánico
-  </span>
-</h1>
-<p class="hero-location">
-  <span class="lang lang-en">
-    Based in Bogotá, Colombia — on-site or remote support depending on the operation and technical requirements.
-  </span>
-  <span class="lang lang-es">
-    Con base en Bogotá, Colombia — atención en sitio o remota, según la operación y el requerimiento técnico.
-  </span>
-</p>
+
+        <div class="hero-subtitle">
+          <span class="lang lang-en">
+            Chemical and Mechanical Risk Engineering. Chemical Safety. Occupational Protection.
+          </span>
+          <span class="lang lang-es">
+            Ingeniería del riesgo químico y mecánico. Seguridad química. Protección ocupacional.
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="lang lang-en">
+            Specialized engineering applied to chemical and mechanical risk
+          </span>
+          <span class="lang lang-es">
+            Ingeniería especializada aplicada al riesgo químico y mecánico
+          </span>
+        </h1>
+
+        <p class="hero-location">
+          <span class="lang lang-en">
+            Based in Bogotá, Colombia — on-site or remote support depending on the operation and technical requirements.
+          </span>
+          <span class="lang lang-es">
+            Con base en Bogotá, Colombia — atención en sitio o remota, según la operación y el requerimiento técnico.
+          </span>
+        </p>
 
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">
@@ -848,7 +668,7 @@
             <span class="lang lang-es">Ver servicios básicos de riesgo laboral</span>
           </a>
         </div>
-
+      </div>
     </header>
 
     <main>
@@ -963,296 +783,206 @@
         </div>
       </section>
 
-/* ========== SERVICIOS CENTRALES ========== */
+      <!-- ========== SERVICIOS CENTRALES ========== -->
+      <section class="services-section" id="services">
+        <div class="section-inner">
 
-.services-section {
-  background: var(--bg-light);
-  border-top: 1px solid var(--border-soft);
-  border-bottom: 1px solid var(--border-soft);
-}
+          <div class="section-header">
+            <div class="section-kicker">
+              <span class="lang lang-en">Core Consulting Services</span>
+              <span class="lang lang-es">Servicios clave de consultoría</span>
+            </div>
 
-.cards-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
+            <h2 class="section-title">
+              <span class="lang lang-en">
+                Engineering-based services focused on preventing occupational incidents
+              </span>
+              <span class="lang lang-es">
+                Servicios de consultoría basados en ingeniería, enfocados en prevenir
+                incidentes laborales y eventos de proceso
+              </span>
+            </h2>
 
-.card {
-  background: var(--card-bg);
-  border-radius: var(--radius-lg);
-  padding: 22px 22px 20px;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(210, 222, 232, 0.85);
-}
+            <p class="section-subtitle">
+              <span class="lang lang-en">
+                Services are designed for operations that handle chemicals, mechanical
+                equipment and significant physical hazards, ensuring worker protection,
+                operational continuity and regulatory compliance.
+              </span>
+              <span class="lang lang-es">
+                Los servicios están diseñados para operaciones que manejan sustancias
+                químicas, equipos mecánicos y peligros físicos significativos, asegurando
+                la protección de los trabajadores, la continuidad operativa y el
+                cumplimiento normativo.
+              </span>
+            </p>
+          </div>
 
-/* ICONOS – versión más grande y visible */
-.card-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
-  background: rgba(0, 184, 148, 0.14);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 10px rgba(0, 184, 148, 0.15);
-}
+          <div class="cards-row">
+            <!-- TARJETA 1 -->
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 7h8" />
+                    <path d="M18 7v8.5l-5.2 9.2a4.5 4.5 0 0 0 3.9 6.8h6.6a4.5 4.5 0 0 0 3.9-6.8L22 15.5V7" />
+                    <path d="M15 23h10" />
+                    <path d="M16 26h8" />
+                  </g>
+                </svg>
+              </div>
 
-.card-icon svg {
-  width: 34px;
-  height: 34px;
-  display: block;
-}
+              <div class="card-label">
+                <span class="lang lang-en">Program Level</span>
+                <span class="lang lang-es">Nivel programático</span>
+              </div>
 
-.card-label {
-  font-size: 0.86rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #006c5a;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
+              <h3 class="card-title">
+                <span class="lang lang-en">Chemical Risk Management</span>
+                <span class="lang lang-es">Gestión del riesgo químico</span>
+              </h3>
 
-.card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text-main);
-}
+              <ul>
+                <li>
+                  <span class="lang lang-en">Chemical inventory and hazard classification (GHS / UN).</span>
+                  <span class="lang lang-es">Inventario de sustancias químicas y clasificación de peligros (SGA / ONU).</span>
+                </li>
+                <li>
+                  <span class="lang lang-en">Risk mapping by area, task and worker exposure.</span>
+                  <span class="lang lang-es">Mapeo de riesgo por área, tarea y nivel de exposición del trabajador.</span>
+                </li>
+                <li>
+                  <span class="lang lang-en">Compatibility matrices and safe storage criteria.</span>
+                  <span class="lang lang-es">Matrices de compatibilidad y criterios de almacenamiento seguro.</span>
+                </li>
+                <li>
+                  <span class="lang lang-en">Procedures for safe handling, mixing and transfer.</span>
+                  <span class="lang lang-es">Procedimientos para manipulación, mezcla, dosificación y transferencia segura.</span>
+                </li>
+              </ul>
+            </article>
 
-.card ul {
-  list-style: none;
-  margin-top: 6px;
-  padding-left: 0;
-  font-size: 0.92rem;
-  color: var(--text-soft);
-}
+            <!-- TARJETA 2 -->
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="14" cy="14" r="4" />
+                    <path d="M14 7v2.2M14 18.8V21M7 14h2.2M18.8 14H21" />
+                    <path d="M9.4 9.4l1.5 1.5M17.1 17.1l1.5 1.5M9.4 18.6l1.5-1.5M17.1 10.9l1.5-1.5" />
+                    <path d="M23 11.5l6 2.2v6.3c0 3-2.2 5.8-6 7.5-3.8-1.7-6-4.5-6-7.5v-6.3l6-2.2z" />
+                    <path d="M21.5 19.5l2.1 2.1 3.4-3.6" />
+                  </g>
+                </svg>
+              </div>
 
-.card li {
-  margin-bottom: 6px;
-  padding-left: 16px;
-  position: relative;
-}
+              <div class="card-label">
+                <span class="lang lang-en">Operational Level</span>
+                <span class="lang lang-es">Nivel operativo</span>
+              </div>
 
-.card li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--accent);
-}
+              <h3 class="card-title">
+                <span class="lang lang-en">Occupational Safety Assessments</span>
+                <span class="lang lang-es">Inspecciones de seguridad en operaciones</span>
+              </h3>
 
-/* ========== SECCIÓN HTML ========== */
+              <ul>
+                <li>
+                  <span class="lang lang-en">
+                    Mechanical hazard identification in equipment, tools and processes.
+                  </span>
+                  <span class="lang lang-es">
+                    Identificación de peligros mecánicos en equipos, herramientas y procesos.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Evaluation of physical and environmental conditions.
+                  </span>
+                  <span class="lang lang-es">
+                    Evaluación de condiciones físicas y ambientales (iluminación, ventilación, ruido, etc.).
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Inspection of PPE, emergency resources and signage.
+                  </span>
+                  <span class="lang lang-es">
+                    Inspección de uso de EPP, recursos de emergencia y señalización.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Action plans prioritized by risk, feasibility and compliance.
+                  </span>
+                  <span class="lang lang-es">
+                    Planes de acción priorizados por riesgo, factibilidad y cumplimiento normativo.
+                  </span>
+                </li>
+              </ul>
+            </article>
 
-<section class="services-section" id="services">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-kicker">
-        <span class="lang lang-en">Core Consulting Services</span>
-        <span class="lang lang-es">Servicios clave de consultoría</span>
-      </div>
-      <h2 class="section-title">
-        <span class="lang lang-en">
-          Engineering-based services focused on preventing occupational incidents
-        </span>
-        <span class="lang lang-es">
-          Servicios de consultoría basados en ingeniería, enfocados en prevenir
-          incidentes laborales y eventos de proceso
-        </span>
-      </h2>
-      <p class="section-subtitle">
-        <span class="lang lang-en">
-          Services are designed for operations that handle chemicals, mechanical
-          equipment and significant physical hazards, ensuring worker protection,
-          operational continuity and regulatory compliance.
-        </span>
-        <span class="lang lang-es">
-          Los servicios están diseñados para operaciones que manejan sustancias
-          químicas, equipos mecánicos y peligros físicos significativos, asegurando
-          la protección de los trabajadores, la continuidad operativa y el
-          cumplimiento normativo.
-        </span>
-      </p>
-    </div>
+            <!-- TARJETA 3 -->
+            <article class="card">
+              <div class="card-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 27.5 18.5 9a1.6 1.6 0 0 1 2.8 0L31.8 27.5a1.6 1.6 0 0 1-1.4 2.4H9.4A1.6 1.6 0 0 1 8 27.5z" />
+                    <path d="M20 16v6" />
+                    <circle cx="20" cy="25" r="1.2" />
+                    <path d="M26.5 14.5c1.8 1.7 3 3.7 3 5.7a4.3 4.3 0 0 1-8.6 0c0-2 1.2-4 3-5.7l1.3-1.3z" />
+                  </g>
+                </svg>
+              </div>
 
-    <div class="cards-row">
-      <!-- TARJETA 1 — Riesgo químico -->
-      <article class="card">
-        <div class="card-icon" aria-hidden="true">
-          <!-- Icono laboratorio / matraz -->
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 7h8" />
-              <path d="M18 7v8.5l-5.2 9.2a4.5 4.5 0 0 0 3.9 6.8h6.6a4.5 4.5 0 0 0 3.9-6.8L22 15.5V7" />
-              <path d="M15 23h10" />
-              <path d="M16 26h8" />
-            </g>
-          </svg>
+              <div class="card-label">
+                <span class="lang lang-en">Incident Readiness</span>
+                <span class="lang lang-es">Preparación ante incidentes</span>
+              </div>
+
+              <h3 class="card-title">
+                <span class="lang lang-en">Emergency &amp; Spill Response</span>
+                <span class="lang lang-es">Respuesta a emergencias y derrames</span>
+              </h3>
+
+              <ul>
+                <li>
+                  <span class="lang lang-en">
+                    Review of emergency plans for chemical and process scenarios.
+                  </span>
+                  <span class="lang lang-es">
+                    Revisión de planes de emergencia para escenarios químicos y de proceso.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Design of spill response procedures and quick guides.
+                  </span>
+                  <span class="lang lang-es">
+                    Diseño de procedimientos de atención de derrames y guías rápidas.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Evaluation of kits, equipment, training and response times.
+                  </span>
+                  <span class="lang lang-es">
+                    Evaluación de kits, equipos, entrenamiento y tiempos de respuesta.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Post-incident analysis and corrective tracking.
+                  </span>
+                  <span class="lang lang-es">
+                    Análisis post-incidente y seguimiento a acciones correctivas y preventivas.
+                  </span>
+                </li>
+              </ul>
+            </article>
+          </div>
         </div>
-        <div class="card-label">
-          <span class="lang lang-en">Program Level</span>
-          <span class="lang lang-es">Nivel programático</span>
-        </div>
-        <h3 class="card-title">
-          <span class="lang lang-en">Chemical Risk Management</span>
-          <span class="lang lang-es">Gestión del riesgo químico</span>
-        </h3>
-        <ul>
-          <li>
-            <span class="lang lang-en">
-              Chemical inventory and hazard classification (GHS / UN).
-            </span>
-            <span class="lang lang-es">
-              Inventario de sustancias químicas y clasificación de peligros (SGA / ONU).
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Risk mapping by area, task and worker exposure.
-            </span>
-            <span class="lang lang-es">
-              Mapeo de riesgo por área, tarea y nivel de exposición del trabajador.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Compatibility matrices and safe storage criteria.
-            </span>
-            <span class="lang lang-es">
-              Matrices de compatibilidad y criterios de almacenamiento seguro.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Procedures for safe handling, mixing and transfer.
-            </span>
-            <span class="lang lang-es">
-              Procedimientos para manipulación, mezcla, dosificación y transferencia segura.
-            </span>
-          </li>
-        </ul>
-      </article>
-
-      <!-- TARJETA 2 — Operaciones / riesgo mecánico -->
-      <article class="card">
-        <div class="card-icon" aria-hidden="true">
-          <!-- Icono engranaje + escudo -->
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="14" cy="14" r="4" />
-              <path d="M14 7v2.2M14 18.8V21M7 14h2.2M18.8 14H21" />
-              <path d="M9.4 9.4l1.5 1.5M17.1 17.1l1.5 1.5M9.4 18.6l1.5-1.5M17.1 10.9l1.5-1.5" />
-              <path d="M23 11.5l6 2.2v6.3c0 3-2.2 5.8-6 7.5-3.8-1.7-6-4.5-6-7.5v-6.3l6-2.2z" />
-              <path d="M21.5 19.5l2.1 2.1 3.4-3.6" />
-            </g>
-          </svg>
-        </div>
-        <div class="card-label">
-          <span class="lang lang-en">Operational Level</span>
-          <span class="lang lang-es">Nivel operativo</span>
-        </div>
-        <h3 class="card-title">
-          <span class="lang lang-en">Occupational Safety Assessments</span>
-          <span class="lang lang-es">Inspecciones de seguridad en operaciones</span>
-        </h3>
-        <ul>
-          <li>
-            <span class="lang lang-en">
-              Mechanical hazard identification in equipment, tools and processes.
-            </span>
-            <span class="lang lang-es">
-              Identificación de peligros mecánicos en equipos, herramientas y procesos.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Evaluation of physical and environmental conditions.
-            </span>
-            <span class="lang lang-es">
-              Evaluación de condiciones físicas y ambientales (iluminación, ventilación, ruido, etc.).
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Inspection of PPE, emergency resources and signage.
-            </span>
-            <span class="lang lang-es">
-              Inspección de uso de EPP, recursos de emergencia y señalización.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Action plans prioritized by risk, feasibility and compliance.
-            </span>
-            <span class="lang lang-es">
-              Planes de acción priorizados por riesgo, factibilidad y cumplimiento normativo.
-            </span>
-          </li>
-        </ul>
-      </article>
-
-      <!-- TARJETA 3 — Emergencias y derrames -->
-      <article class="card">
-        <div class="card-icon" aria-hidden="true">
-          <!-- Icono triángulo + gota / derrame -->
-          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 27.5 18.5 9a1.6 1.6 0 0 1 2.8 0L31.8 27.5a1.6 1.6 0 0 1-1.4 2.4H9.4A1.6 1.6 0 0 1 8 27.5z" />
-              <path d="M20 16v6" />
-              <circle cx="20" cy="25" r="1.2" />
-              <path d="M26.5 14.5c1.8 1.7 3 3.7 3 5.7a4.3 4.3 0 0 1-8.6 0c0-2 1.2-4 3-5.7l1.3-1.3z" />
-            </g>
-          </svg>
-        </div>
-        <div class="card-label">
-          <span class="lang lang-en">Incident Readiness</span>
-          <span class="lang lang-es">Preparación ante incidentes</span>
-        </div>
-        <h3 class="card-title">
-          <span class="lang lang-en">Emergency &amp; Spill Response</span>
-          <span class="lang lang-es">Respuesta a emergencias y derrames</span>
-        </h3>
-        <ul>
-          <li>
-            <span class="lang lang-en">
-              Review of emergency plans for chemical and process scenarios.
-            </span>
-            <span class="lang lang-es">
-              Revisión de planes de emergencia para escenarios químicos y de proceso.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Design of spill response procedures and quick guides.
-            </span>
-            <span class="lang lang-es">
-              Diseño de procedimientos de atención de derrames y guías rápidas.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Evaluation of kits, equipment, training and response times.
-            </span>
-            <span class="lang lang-es">
-              Evaluación de kits, equipos, entrenamiento y tiempos de respuesta.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-en">
-              Post-incident analysis and corrective tracking.
-            </span>
-            <span class="lang lang-es">
-              Análisis post-incidente y seguimiento a acciones correctivas y preventivas.
-            </span>
-          </li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
+      </section>
 
       <!-- ========== INDUSTRIAS SERVIDAS ========== -->
       <section class="industries-section">
@@ -1547,6 +1277,7 @@
     <span class="lang lang-es">Escríbeme por WhatsApp</span>
   </a>
 
+  <!-- SCRIPT SWITCH IDIOMA -->
   <script>
     (function () {
       const body = document.body;
