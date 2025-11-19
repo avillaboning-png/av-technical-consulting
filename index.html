@@ -1396,7 +1396,29 @@
     <span class="lang lang-en">Message me on WhatsApp</span>
     <span class="lang lang-es">Escríbeme por WhatsApp</span>
   </a>
+<!-- Control de sub-página -->
+<script>
+  function openChemicalRisk() {
+    const hero = document.querySelector("header.hero");
+    const main = document.querySelector("main");
+    const sub = document.getElementById("sub-chemical-risk");
 
+    if (hero) hero.style.display = "none";
+    if (main) main.style.display = "none";
+    if (sub) sub.style.display = "block";
+  }
+
+  function returnHome() {
+    const hero = document.querySelector("header.hero");
+    const main = document.querySelector("main");
+    const sub = document.getElementById("sub-chemical-risk");
+
+    if (hero) hero.style.display = "flex";   // Hero vuelve a verse
+    if (main) main.style.display = "block";  // Contenido principal visible
+    if (sub) sub.style.display = "none";     // Ocultar sub-página
+  }
+</script>
+  
   <script>
     (function () {
       const body = document.body;
