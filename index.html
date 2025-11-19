@@ -747,11 +747,6 @@
         </div>
       </section>
 
-<!-- ================================ -->
-<!-- ========== SERVICIOS CENTRALES ========== -->
-<!-- ================================ -->
-
-<style>
 /* ========== SERVICIOS CENTRALES ========== */
 
 .services-section {
@@ -774,21 +769,22 @@
   border: 1px solid rgba(210, 222, 232, 0.85);
 }
 
-/* Iconos vectoriales de cada tarjeta */
+/* ICONOS – versión más grande y visible */
 .card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: rgba(0, 184, 148, 0.12);
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(0, 184, 148, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 10px rgba(0, 184, 148, 0.15);
 }
 
 .card-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 34px;
   display: block;
 }
 
@@ -832,7 +828,8 @@
   border-radius: 999px;
   background: var(--accent);
 }
-</style>
+
+/* ========== SECCIÓN HTML ========== */
 
 <section class="services-section" id="services">
   <div class="section-inner">
@@ -841,7 +838,6 @@
         <span class="lang lang-en">Core Consulting Services</span>
         <span class="lang lang-es">Servicios clave de consultoría</span>
       </div>
-
       <h2 class="section-title">
         <span class="lang lang-en">
           Engineering-based services focused on preventing occupational incidents
@@ -851,7 +847,6 @@
           incidentes laborales y eventos de proceso
         </span>
       </h2>
-
       <p class="section-subtitle">
         <span class="lang lang-en">
           Services are designed for operations that handle chemicals, mechanical
@@ -859,17 +854,16 @@
           operational continuity and regulatory compliance.
         </span>
         <span class="lang lang-es">
-          Los servicios están diseñados para operaciones que manejan sustancias químicas,
-          equipos mecánicos y peligros físicos significativos, asegurando la protección de
-          los trabajadores, la continuidad operativa y el cumplimiento normativo.
+          Los servicios están diseñados para operaciones que manejan sustancias
+          químicas, equipos mecánicos y peligros físicos significativos, asegurando
+          la protección de los trabajadores, la continuidad operativa y el
+          cumplimiento normativo.
         </span>
       </p>
     </div>
 
-    <!-- TARJETAS -->
     <div class="cards-row">
-
-      <!-- TARJETA 1 — Riesgo Químico -->
+      <!-- TARJETA 1 — Riesgo químico -->
       <article class="card">
         <div class="card-icon" aria-hidden="true">
           <!-- Icono laboratorio / matraz -->
@@ -882,38 +876,51 @@
             </g>
           </svg>
         </div>
-
         <div class="card-label">
           <span class="lang lang-en">Program Level</span>
           <span class="lang lang-es">Nivel programático</span>
         </div>
-
         <h3 class="card-title">
           <span class="lang lang-en">Chemical Risk Management</span>
           <span class="lang lang-es">Gestión del riesgo químico</span>
         </h3>
-
         <ul>
           <li>
-            <span class="lang lang-en">Chemical inventory and hazard classification (GHS / UN).</span>
-            <span class="lang lang-es">Inventario de sustancias químicas y clasificación de peligros (SGA / ONU).</span>
+            <span class="lang lang-en">
+              Chemical inventory and hazard classification (GHS / UN).
+            </span>
+            <span class="lang lang-es">
+              Inventario de sustancias químicas y clasificación de peligros (SGA / ONU).
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Risk mapping by area, task and worker exposure.</span>
-            <span class="lang lang-es">Mapeo de riesgo por área, tarea y nivel de exposición del trabajador.</span>
+            <span class="lang lang-en">
+              Risk mapping by area, task and worker exposure.
+            </span>
+            <span class="lang lang-es">
+              Mapeo de riesgo por área, tarea y nivel de exposición del trabajador.
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Compatibility matrices and safe storage criteria.</span>
-            <span class="lang lang-es">Matrices de compatibilidad y criterios de almacenamiento seguro.</span>
+            <span class="lang lang-en">
+              Compatibility matrices and safe storage criteria.
+            </span>
+            <span class="lang lang-es">
+              Matrices de compatibilidad y criterios de almacenamiento seguro.
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Procedures for safe handling, mixing and transfer.</span>
-            <span class="lang lang-es">Procedimientos para manipulación, mezcla, dosificación y transferencia segura.</span>
+            <span class="lang lang-en">
+              Procedures for safe handling, mixing and transfer.
+            </span>
+            <span class="lang lang-es">
+              Procedimientos para manipulación, mezcla, dosificación y transferencia segura.
+            </span>
           </li>
         </ul>
       </article>
 
-      <!-- TARJETA 2 — Operaciones / Riesgo Mecánico -->
+      <!-- TARJETA 2 — Operaciones / riesgo mecánico -->
       <article class="card">
         <div class="card-icon" aria-hidden="true">
           <!-- Icono engranaje + escudo -->
@@ -927,41 +934,54 @@
             </g>
           </svg>
         </div>
-
         <div class="card-label">
           <span class="lang lang-en">Operational Level</span>
           <span class="lang lang-es">Nivel operativo</span>
         </div>
-
         <h3 class="card-title">
           <span class="lang lang-en">Occupational Safety Assessments</span>
           <span class="lang lang-es">Inspecciones de seguridad en operaciones</span>
         </h3>
-
         <ul>
           <li>
-            <span class="lang lang-en">Mechanical hazard identification in equipment, tools and processes.</span>
-            <span class="lang lang-es">Identificación de peligros mecánicos en equipos, herramientas y procesos.</span>
+            <span class="lang lang-en">
+              Mechanical hazard identification in equipment, tools and processes.
+            </span>
+            <span class="lang lang-es">
+              Identificación de peligros mecánicos en equipos, herramientas y procesos.
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Evaluation of physical and environmental conditions.</span>
-            <span class="lang lang-es">Evaluación de condiciones físicas y ambientales (iluminación, ventilación, ruido, etc.).</span>
+            <span class="lang lang-en">
+              Evaluation of physical and environmental conditions.
+            </span>
+            <span class="lang lang-es">
+              Evaluación de condiciones físicas y ambientales (iluminación, ventilación, ruido, etc.).
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Inspection of PPE, emergency resources and signage.</span>
-            <span class="lang lang-es">Inspección de uso de EPP, recursos de emergencia y señalización.</span>
+            <span class="lang lang-en">
+              Inspection of PPE, emergency resources and signage.
+            </span>
+            <span class="lang lang-es">
+              Inspección de uso de EPP, recursos de emergencia y señalización.
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Action plans prioritized by risk, feasibility and compliance.</span>
-            <span class="lang lang-es">Planes de acción priorizados por riesgo, factibilidad y cumplimiento normativo.</span>
+            <span class="lang lang-en">
+              Action plans prioritized by risk, feasibility and compliance.
+            </span>
+            <span class="lang lang-es">
+              Planes de acción priorizados por riesgo, factibilidad y cumplimiento normativo.
+            </span>
           </li>
         </ul>
       </article>
 
-      <!-- TARJETA 3 — Emergencias / Derrames -->
+      <!-- TARJETA 3 — Emergencias y derrames -->
       <article class="card">
         <div class="card-icon" aria-hidden="true">
-          <!-- Icono derrame + triángulo -->
+          <!-- Icono triángulo + gota / derrame -->
           <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
             <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M8 27.5 18.5 9a1.6 1.6 0 0 1 2.8 0L31.8 27.5a1.6 1.6 0 0 1-1.4 2.4H9.4A1.6 1.6 0 0 1 8 27.5z" />
@@ -971,37 +991,49 @@
             </g>
           </svg>
         </div>
-
         <div class="card-label">
           <span class="lang lang-en">Incident Readiness</span>
           <span class="lang lang-es">Preparación ante incidentes</span>
         </div>
-
         <h3 class="card-title">
-          <span class="lang lang-en">Emergency & Spill Response</span>
+          <span class="lang lang-en">Emergency &amp; Spill Response</span>
           <span class="lang lang-es">Respuesta a emergencias y derrames</span>
         </h3>
-
         <ul>
           <li>
-            <span class="lang lang-en">Review of emergency plans for chemical and process scenarios.</span>
-            <span class="lang lang-es">Revisión de planes de emergencia para escenarios químicos y de proceso.</span>
+            <span class="lang lang-en">
+              Review of emergency plans for chemical and process scenarios.
+            </span>
+            <span class="lang lang-es">
+              Revisión de planes de emergencia para escenarios químicos y de proceso.
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Design of spill response procedures and quick guides.</span>
-            <span class="lang lang-es">Diseño de procedimientos de atención de derrames y guías rápidas.</span>
+            <span class="lang lang-en">
+              Design of spill response procedures and quick guides.
+            </span>
+            <span class="lang lang-es">
+              Diseño de procedimientos de atención de derrames y guías rápidas.
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Evaluation of kits, equipment, training and response times.</span>
-            <span class="lang lang-es">Evaluación de kits, equipos, entrenamiento y tiempos de respuesta.</span>
+            <span class="lang lang-en">
+              Evaluation of kits, equipment, training and response times.
+            </span>
+            <span class="lang lang-es">
+              Evaluación de kits, equipos, entrenamiento y tiempos de respuesta.
+            </span>
           </li>
           <li>
-            <span class="lang lang-en">Post-incident analysis and corrective tracking.</span>
-            <span class="lang lang-es">Análisis post-incidente y seguimiento a acciones correctivas y preventivas.</span>
+            <span class="lang lang-en">
+              Post-incident analysis and corrective tracking.
+            </span>
+            <span class="lang lang-es">
+              Análisis post-incidente y seguimiento a acciones correctivas y preventivas.
+            </span>
           </li>
         </ul>
       </article>
-
     </div>
   </div>
 </section>
