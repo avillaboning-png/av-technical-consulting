@@ -624,6 +624,33 @@
   transform: translateY(-5px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 }
+    /* ========= SUBPÁGINA RIESGO QUÍMICO ========= */
+
+.hidden-view {
+  display: none;
+}
+
+.subpage {
+  background: #ffffff;
+  padding: 60px 20px;
+}
+
+.subpage-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #003024;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
   </style>
 </head>
 <body data-lang="en">
@@ -828,7 +855,7 @@
 
           <div class="cards-row">
             <!-- TARJETA 1 — Riesgo químico -->
-            <article class="card">
+            <article class="card card-clickable" onclick="openChemicalRisk()">
               <div class="card-icon" aria-hidden="true">
                 <!-- Icono laboratorio / matraz -->
                 <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -1288,6 +1315,57 @@
         AV Ingeniería del Riesgo © 2025 – Ingeniería de riesgos químicos y laborales
         • Consultoría en seguridad de procesos y riesgo ocupacional
       </span>
+      <!-- ========== SUBPÁGINA: GESTIÓN DEL RIESGO QUÍMICO ========== -->
+<section id="sub-chemical-risk" class="hidden-view subpage">
+  <div class="subpage-inner">
+
+    <h2 style="font-size:2rem; font-weight:800; margin-bottom:18px;">
+      Gestión del riesgo químico
+    </h2>
+
+    <p style="color:#476070; margin-bottom:24px;">
+      Una mirada integrada que conecta la exposición química con la salud ocupacional,
+      la seguridad de procesos y la protección ambiental.
+    </p>
+
+    <!-- Imagen del dron aplicando plaguicida -->
+    <figure style="margin:0 0 28px 0;">
+      <img src="chemical-risk-drone-operator.jpg"
+           alt="Operador supervisando dron de aspersión con protección respiratoria completa"
+           style="width:100%; border-radius:18px; box-shadow:0 18px 40px rgba(0,0,0,0.18);" />
+      <figcaption style="font-size:0.85rem; color:#71808f; margin-top:8px;">
+        Operación de aspersión asistida por dron con énfasis en control de la exposición,
+        ventilación natural y uso adecuado de elementos de protección personal.
+      </figcaption>
+    </figure>
+
+    <p style="color:#476070; margin-bottom:12px;">
+      La gestión del riesgo químico en contextos agroindustriales exige integrar el
+      diseño de las operaciones, la selección de tecnologías como drones de aspersión
+      y la protección del trabajador expuesto. Un enfoque basado en ingeniería permite
+      controlar la dosis aplicada, reducir la deriva, mejorar la trazabilidad del
+      producto y minimizar la exposición dérmica e inhalatoria.
+    </p>
+
+    <p style="color:#476070; margin-bottom:12px;">
+      A partir de matrices de exposición, mapas de riesgo por tarea y revisión de
+      fichas de datos de seguridad, es posible establecer criterios de selección de EPP,
+      procedimientos de mezcla y carga, y protocolos de limpieza y desecho de envases
+      que mantengan la operación dentro de límites de exposición aceptables.
+    </p>
+
+    <p style="color:#476070; margin-bottom:32px;">
+      La articulación con el SG-SST y los requisitos ambientales facilita que las
+      decisiones técnicas sobre productos, equipos de aplicación y prácticas de trabajo
+      se traduzcan en controles verificables, medibles y auditables en campo.
+    </p>
+
+    <button class="back-btn" onclick="returnHome()">
+      Volver al inicio
+    </button>
+
+  </div>
+</section>
     </footer>
   </div>
 
