@@ -1545,6 +1545,7 @@
   </a>
 <!-- Control de sub-página -->
 <script>
+<script>
 function openChemicalRisk() {
     const hero   = document.querySelector("header.hero");
     const main   = document.querySelector("main");
@@ -1558,15 +1559,15 @@ function openChemicalRisk() {
 }
 
 function returnHome() {
-    const hero   = document.querySelector("header.hero");
-    const main   = document.querySelector("main");
-    const sub    = document.getElementById("sub-chemical-risk");
+    const hero = document.querySelector("header.hero");
+    const main = document.querySelector("main");
+    const sub = document.getElementById("sub-chemical-risk");
     const footer = document.querySelector("footer");
 
-    if (hero)   hero.style.display   = "flex";
-    if (main)   main.style.display   = "block";
-    if (footer) footer.style.display = "block";
-    if (sub)    sub.style.display    = "none";
+    if (hero) hero.style.display = "flex";
+    if (main) main.style.display = "block";
+    if (footer) footer.style.display = "block";  // ⬅️ mostrar footer otra vez
+    if (sub) sub.style.display = "none";
 }
 </script>
   
