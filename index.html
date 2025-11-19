@@ -1547,21 +1547,25 @@
     const hero = document.querySelector("header.hero");
     const main = document.querySelector("main");
     const sub = document.getElementById("sub-chemical-risk");
+    const footer = document.querySelector("footer");
 
     if (hero) hero.style.display = "none";
     if (main) main.style.display = "none";
+    if (footer) footer.style.display = "none";   // ⬅️ ocultar footer
     if (sub) sub.style.display = "block";
-  }
+}
 
   function returnHome() {
     const hero = document.querySelector("header.hero");
     const main = document.querySelector("main");
     const sub = document.getElementById("sub-chemical-risk");
+    const footer = document.querySelector("footer");
 
-    if (hero) hero.style.display = "flex";   // Hero vuelve a verse
-    if (main) main.style.display = "block";  // Contenido principal visible
-    if (sub) sub.style.display = "none";     // Ocultar sub-página
-  }
+    if (hero) hero.style.display = "flex";
+    if (main) main.style.display = "block";
+    if (footer) footer.style.display = "block";  // ⬅️ mostrar footer otra vez
+    if (sub) sub.style.display = "none";
+}
 </script>
   
   <script>
