@@ -4,20 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AV Risk Engineering – Occupational & Chemical Risk Engineering</title>
-/* Banner fotográfico para la tarjeta 3 */
-.card-photo-banner {
-  margin: -22px -22px 18px;              /* “come” el padding del card para que la foto toque los bordes */
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  overflow: hidden;                      /* oculta cualquier borde sobrante de la imagen */
-}
 
-.card-photo-banner img {
-  display: block;
-  width: 100%;
-  height: 180px;                         /* ajusta esta altura si quieres más/menos alto */
-  object-fit: cover;                     /* recorta la imagen para que se vea tipo banner */
-}
-  
   <style>
     :root {
       --bg-dark: #002b3f;
@@ -316,14 +303,7 @@
       height: 30px;
       display: block;
     }
-.card-photo-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px; /* mismo radio de la card-icon */
-  display: block;
-}
-    
+
     .card-label {
       font-size: 0.86rem;
       text-transform: uppercase;
@@ -758,21 +738,6 @@
         align-items: flex-start;
       }
     }
-.card-photo-banner {
-  width: 100%;
-  height: 150px; /* Puedes ajustar a 180px si quieres más grande */
-  overflow: hidden;
-  border-radius: 16px;
-  margin-bottom: 18px;
-}
-
-.card-photo-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Esto hace que la imagen se vea profesional */
-  display: block;
-}
-    
   </style>
 </head>
 
@@ -1109,68 +1074,72 @@
             </article>
 
             <!-- TARJETA 3 — Emergencias y derrames -->
-<article class="card">
-  <!-- Banner de foto en la parte superior -->
-  <div class="card-photo-banner">
-    <img 
-      src="emergency-drill-training.jpg"
-      alt="Capacitación práctica en atención de derrames en campo"
-    />
-  </div>
-
-  <div class="card-label">
-    <span class="lang lang-en">Incident Readiness</span>
-    <span class="lang lang-es">Preparación ante incidentes</span>
-  </div>
-
-  <h3 class="card-title">
-    <span class="lang lang-en">Emergency, Spill &amp; Process Event Response</span>
-    <span class="lang lang-es">Respuesta a emergencias, derrames y fallas operacionales</span>
-  </h3>
-
-  <ul>
-    <li>
-      <span class="lang lang-en">
-        Review and update of emergency plans for chemical, mechanical and process scenarios.
-      </span>
-      <span class="lang lang-es">
-        Revisión y actualización de planes de emergencia para escenarios químicos, mecánicos y de proceso.
-      </span>
-    </li>
-    <li>
-      <span class="lang lang-en">
-        Design of spill response procedures, guides and incident activation checklists.
-      </span>
-      <span class="lang lang-es">
-        Diseño de procedimientos de atención de derrames, guías rápidas y listas de activación.
-      </span>
-    </li>
-    <li>
-      <span class="lang lang-en">
-        Evaluation of spill kits, specialized PPE, routes and response times.
-      </span>
-      <span class="lang lang-es">
-        Evaluación de kits de derrames, EPP especializado, rutas y tiempos de respuesta.
-      </span>
-    </li>
-    <li>
-      <span class="lang lang-en">
-        Drills, training for emergency teams and post-incident analysis.
-      </span>
-      <span class="lang lang-es">
-        Simulacros, entrenamiento a brigadas y análisis post-incidente.
-      </span>
-    </li>
-    <li>
-      <span class="lang lang-en">
-        Corrective and preventive actions integrated into both risk lines (chemical and mechanical).
-      </span>
-      <span class="lang lang-es">
-        Acciones correctivas y preventivas integradas a las dos líneas de riesgo (químico y mecánico).
-      </span>
-    </li>
-  </ul>
-</article>
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <!-- Icono triángulo + gota / derrame -->
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 27.5 18.5 9a1.6 1.6 0 0 1 2.8 0L31.8 27.5a1.6 1.6 0 0 1-1.4 2.4H9.4A1.6 1.6 0 0 1 8 27.5z" />
+                    <path d="M20 16v6" />
+                    <circle cx="20" cy="25" r="1.2" />
+                    <path d="M26.5 14.5c1.8 1.7 3 3.7 3 5.7a4.3 4.3 0 0 1-8.6 0c0-2 1.2-4 3-5.7l1.3-1.3z" />
+                  </g>
+                </svg>
+              </div>
+              <div class="card-label">
+                <span class="lang lang-en">Incident Readiness</span>
+                <span class="lang lang-es">Preparación ante incidentes</span>
+              </div>
+              <h3 class="card-title">
+                <span class="lang lang-en">Emergency, Spill &amp; Process Event Response</span>
+                <span class="lang lang-es">Respuesta a emergencias, derrames y fallas operacionales</span>
+              </h3>
+              <ul>
+                <li>
+                  <span class="lang lang-en">
+                    Review and update of emergency plans for chemical, mechanical and process scenarios.
+                  </span>
+                  <span class="lang lang-es">
+                    Revisión y actualización de planes de emergencia para escenarios químicos, mecánicos y de proceso.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Design of spill response procedures, guides and incident activation checklists.
+                  </span>
+                  <span class="lang lang-es">
+                    Diseño de procedimientos de atención de derrames, guías rápidas y listas de activación.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Evaluation of spill kits, specialized PPE, routes and response times.
+                  </span>
+                  <span class="lang lang-es">
+                    Evaluación de kits de derrames, EPP especializado, rutas y tiempos de respuesta.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Drills, training for emergency teams and post-incident analysis.
+                  </span>
+                  <span class="lang lang-es">
+                    Simulacros, entrenamiento a brigadas y análisis post-incidente.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Corrective and preventive actions integrated into both risk lines (chemical and mechanical).
+                  </span>
+                  <span class="lang lang-es">
+                    Acciones correctivas y preventivas integradas a las dos líneas de riesgo (químico y mecánico).
+                  </span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <!-- ========== INDUSTRIAS SERVIDAS ========== -->
       <section class="industries-section">
