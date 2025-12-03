@@ -1855,8 +1855,19 @@
   <script>
     (function () {
       const body = document.body;
-      const stored = localStorage.getItem("av-lang");
-      const initial = stored === "es" ? "es" : "en";
+      let initial = "en";
+
+      // Leemos idioma guardado, pero protegidos por try/catch
+      try {
+        const stored = localStorage.getItem("av-lang");
+        if (stored === "es" || stored === "en") {
+          initial = stored;
+        }
+      } catch (e) {
+        // Si falla localStorage, seguimos en "en" sin romper nada
+        console.warn("LocalStorage not available, using default lang 'en'");
+      }
+
       body.setAttribute("data-lang", initial);
 
       const buttons = document.querySelectorAll("[data-lang-btn]");
@@ -1875,10 +1886,16 @@
 
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
-          const lang = btn.getAttribute("data-lang-btn");
+          const lang = btn.getAttribute("data-lang-btn") || "en";
           body.setAttribute("data-lang", lang);
-          localStorage.setItem("av-lang", lang);
           updateButtons(lang);
+
+          // Guardamos el idioma, pero sin arriesgar la ejecución
+          try {
+            localStorage.setItem("av-lang", lang);
+          } catch (e) {
+            console.warn("Could not persist language selection", e);
+          }
         });
       });
     })();
