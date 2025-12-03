@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AV Risk Engineering – Occupational & Chemical Risk Engineering</title>
+
   <style>
     :root {
       --bg-dark: #002b3f;
@@ -269,47 +270,38 @@
 
     .cards-row {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
     .card {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: 0;
+      padding: 22px 22px 20px;
       box-shadow: var(--shadow-card);
       border: 1px solid rgba(210, 222, 232, 0.85);
-      overflow: hidden;
+      cursor: default;
+    }
+
+    .card-clickable {
+      cursor: pointer;
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: rgba(0, 184, 148, 0.12);
       display: flex;
-      flex-direction: column;
-      transition: all 0.28s ease;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
-    }
-
-    .card-photo {
-      width: 100%;
-      height: 150px;
-      background: #ccd8e2; /* PLACEHOLDER: aquí luego va la foto */
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    /* Ejemplo de clases para cuando tengas las fotos:
-       .card-photo-chemical {
-         background-image: url("NOMBRE-FOTO-QUIMICO.jpg");
-       }
-    */
-
-    .card-body {
-      padding: 20px 20px 18px;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+    .card-icon svg {
+      width: 30px;
+      height: 30px;
+      display: block;
     }
 
     .card-label {
@@ -324,27 +316,21 @@
     .card-title {
       font-size: 1.05rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       color: var(--text-main);
-    }
-
-    .card-intro {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      margin-bottom: 12px;
     }
 
     .card ul {
       list-style: none;
-      margin-top: 0;
+      margin-top: 6px;
       padding-left: 0;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--text-soft);
     }
 
     .card li {
       margin-bottom: 6px;
-      padding-left: 14px;
+      padding-left: 16px;
       position: relative;
     }
 
@@ -359,32 +345,17 @@
       background: var(--accent);
     }
 
-    .card-footer {
-      margin-top: auto;
-      padding-top: 10px;
-      display: flex;
-      justify-content: flex-start;
+    /* ====== EFECTO HOVER PREMIUM PARA TARJETAS ====== */
+
+    .card,
+    .method-card {
+      transition: all 0.28s ease;
     }
 
-    .card-more {
-      background: none;
-      border: none;
-      padding: 0;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #00856e;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .card-more::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 100%;
-      height: 1px;
-      background: rgba(0, 133, 110, 0.4);
+    .card:hover,
+    .method-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
     }
 
     /* ========== INDUSTRIAS ========== */
@@ -429,12 +400,6 @@
       padding: 20px 20px 18px;
       box-shadow: var(--shadow-card);
       border: 1px solid rgba(210, 222, 232, 0.9);
-      transition: all 0.28s ease;
-    }
-
-    .method-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
     }
 
     .method-step {
@@ -612,26 +577,26 @@
       display: block;
     }
 
-    /* ========== SUBPÁGINAS ========== */
+    /* ========= SUBPÁGINA RIESGO QUÍMICO ========= */
 
     .subpage-section {
       display: none;
       background: var(--bg-light);
       border-top: 1px solid var(--border-soft);
       border-bottom: 1px solid var(--border-soft);
-      padding: 60px 20px 80px;
     }
 
     .subpage-inner {
       max-width: var(--max-width);
       margin: 0 auto;
+      padding: 60px 20px 80px;
     }
 
     .subpage-title {
       font-size: 1.7rem;
       font-weight: 750;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       color: var(--text-main);
     }
 
@@ -639,20 +604,20 @@
       font-size: 0.98rem;
       text-align: center;
       color: var(--text-soft);
-      max-width: 780px;
-      margin: 0 auto 30px;
+      max-width: 760px;
+      margin: 0 auto 32px;
     }
 
     .subpage-layout {
       display: flex;
       flex-wrap: wrap;
       gap: 32px;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
     }
 
     .subpage-text {
-      flex: 1 1 380px;
+      flex: 1 1 360px;
       font-size: 0.95rem;
       color: var(--text-soft);
     }
@@ -661,31 +626,30 @@
       margin-bottom: 10px;
     }
 
-    .subpage-text ul {
-      margin-left: 18px;
-      margin-bottom: 10px;
+    .subpage-text p:last-child {
+      margin-bottom: 0;
     }
 
-    .subpage-photo {
-      flex: 1 1 360px;
-      min-height: 230px;
-      border-radius: var(--radius-lg);
-      background: #ccd8e2; /* PLACEHOLDER – luego irá la foto */
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
+    .subpage-image {
+      flex: 1 1 320px;
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 10px;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .subpage-photo-note {
-      font-size: 0.8rem;
-      color: #ffffff;
-      background: rgba(0, 43, 63, 0.6);
-      padding: 4px 10px;
-      border-radius: 999px;
+    .subpage-image img {
+      width: 100%;
+      max-width: 460px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      display: block;
+    }
+
+    .subpage-caption {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: #75889a;
+      text-align: center;
     }
 
     .subpage-actions {
@@ -713,12 +677,6 @@
 
     /* ========== RESPONSIVE ========== */
 
-    @media (max-width: 1100px) {
-      .cards-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
     @media (max-width: 900px) {
       .hero-inner {
         padding-top: 70px;
@@ -730,19 +688,15 @@
       }
 
       .profile-grid,
+      .cards-row,
       .method-grid,
       .contact-grid {
         grid-template-columns: minmax(0, 1fr);
       }
-    }
 
-    @media (max-width: 768px) {
-      .subpage-layout {
-        flex-direction: column-reverse;
-      }
-
-      .subpage-subtitle {
-        text-align: left;
+      .cards-row,
+      .method-grid {
+        gap: 18px;
       }
     }
 
@@ -775,12 +729,18 @@
         bottom: 16px;
       }
 
-      .cards-row {
-        grid-template-columns: minmax(0, 1fr);
+      .subpage-subtitle {
+        text-align: left;
+      }
+
+      .subpage-layout {
+        flex-direction: column-reverse;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
+
 <body data-lang="en">
   <div class="page-wrapper">
     <!-- SWITCH IDIOMA -->
@@ -890,13 +850,16 @@
               <p>
                 <span class="lang lang-en">
                   The consulting model is rigorous, engineering-driven and aligned with international best
-                  practices, OSH management system requirements, insurer expectations and the technical realities of
-                  field operations.
+                  practices, SG-SST requirements, ARL/insurance expectations and the technical realities of
+                  field operations. The methodology enables structured diagnosis, prioritization and control
+                  of critical occupational and chemical hazards through scalable, evidence-based solutions.
                 </span>
                 <span class="lang lang-es">
                   El modelo de consultoría es riguroso, orientado por la ingeniería y alineado con las
                   mejores prácticas internacionales, los requisitos del SG-SST, las expectativas de ARL y
-                  aseguradoras y las realidades técnicas del trabajo en campo.
+                  aseguradoras y las realidades técnicas del trabajo en campo. La metodología permite el
+                  diagnóstico, priorización y control estructurado de riesgos laborales y químicos críticos
+                  mediante soluciones escalables y basadas en evidencia.
                 </span>
               </p>
             </div>
@@ -934,7 +897,7 @@
                 </li>
                 <li>
                   <span class="lang lang-en">
-                    Integration with OSH management systems and regulatory compliance frameworks.
+                    Integration with SG-SST and regulatory compliance frameworks.
                   </span>
                   <span class="lang lang-es">
                     Integración con el SG-SST y marcos de cumplimiento normativo.
@@ -979,176 +942,200 @@
           </div>
 
           <div class="cards-row">
-            <!-- TARJETA 1 – Riesgo químico -->
-            <article class="card">
-              <div class="card-photo card-photo-chemical"><!-- FOTO L-D (placeholder) --></div>
-              <div class="card-body">
-                <div class="card-label">
-                  <span class="lang lang-en">Program Level</span>
-                  <span class="lang lang-es">Nivel programático</span>
-                </div>
-                <h3 class="card-title">
-                  <span class="lang lang-en">Chemical Risk Management</span>
-                  <span class="lang lang-es">Gestión del riesgo químico</span>
-                </h3>
-                <p class="card-intro">
+            <!-- TARJETA 1 — Riesgo químico -->
+            <article class="card card-clickable" onclick="openChemicalRisk()">
+              <div class="card-icon" aria-hidden="true">
+                <!-- Icono laboratorio / matraz -->
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 7h8" />
+                    <path d="M18 7v8.5l-5.2 9.2a4.5 4.5 0 0 0 3.9 6.8h6.6a4.5 4.5 0 0 0 3.9-6.8L22 15.5V7" />
+                    <path d="M15 23h10" />
+                    <path d="M16 26h8" />
+                  </g>
+                </svg>
+              </div>
+              <div class="card-label">
+                <span class="lang lang-en">Program Level</span>
+                <span class="lang lang-es">Nivel programático</span>
+              </div>
+              <h3 class="card-title">
+                <span class="lang lang-en">Chemical Risk Management</span>
+                <span class="lang lang-es">Gestión del riesgo químico</span>
+              </h3>
+              <ul>
+                <li>
                   <span class="lang lang-en">
-                    Engineering applied to exposure control, compatibility and SGA / OSH compliance.
+                    Master chemical inventory and hazard classification (GHS / UN).
                   </span>
                   <span class="lang lang-es">
-                    Ingeniería aplicada al control de la exposición, la compatibilidad y el cumplimiento SGA / SG-SST.
+                    Inventario maestro de sustancias químicas y clasificación de peligros (SGA / ONU).
                   </span>
-                </p>
-                <ul>
-                  <li>
-                    <span class="lang lang-en">Baseline of chemical risk and regulatory gaps.</span>
-                    <span class="lang lang-es">Línea basal del riesgo químico y brechas de cumplimiento.</span>
-                  </li>
-                  <li>
-                    <span class="lang lang-en">Qualitative evaluations of inhalation exposure.</span>
-                    <span class="lang lang-es">Evaluaciones cualitativas de exposición por inhalación.</span>
-                  </li>
-                  <li>
-                    <span class="lang lang-en">Compatibility, storage and containment criteria.</span>
-                    <span class="lang lang-es">Criterios de compatibilidad, almacenamiento y contención.</span>
-                  </li>
-                </ul>
-                <div class="card-footer">
-                  <button class="card-more" type="button" onclick="openSubpage('chemical')">
-                    <span class="lang lang-es">Leer +</span>
-                    <span class="lang lang-en">Learn more</span>
-                  </button>
-                </div>
-              </div>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Hazard and exposure identification by process, area, task and substance.
+                  </span>
+                  <span class="lang lang-es">
+                    Identificación de peligros y exposición por proceso, área, tarea y sustancia.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Compatibility matrices, safe storage criteria and containment systems.
+                  </span>
+                  <span class="lang lang-es">
+                    Matrices de compatibilidad, criterios de almacenamiento seguro y sistemas de contención.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Standard procedures for handling, mixing, transfer and internal transport.
+                  </span>
+                  <span class="lang lang-es">
+                    Procedimientos normalizados para manipulación, mezcla, transferencia y transporte interno.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Programmed inspections in chemical rooms, warehouses and laboratories.
+                  </span>
+                  <span class="lang lang-es">
+                    Inspecciones programáticas en cuartos de químicos, bodegas y laboratorios.
+                  </span>
+                </li>
+              </ul>
             </article>
 
-            <!-- TARJETA 2 – Riesgo mecánico y operativo -->
+            <!-- TARJETA 2 — Riesgo mecánico / operativo -->
             <article class="card">
-              <div class="card-photo card-photo-mechanical"><!-- FOTO L-D (placeholder) --></div>
-              <div class="card-body">
-                <div class="card-label">
-                  <span class="lang lang-en">Operational Level</span>
-                  <span class="lang lang-es">Nivel operativo</span>
-                </div>
-                <h3 class="card-title">
-                  <span class="lang lang-en">Mechanical &amp; Operational Risk</span>
-                  <span class="lang lang-es">Riesgo mecánico y operativo</span>
-                </h3>
-                <p class="card-intro">
+              <div class="card-icon" aria-hidden="true">
+                <!-- Icono engranaje + escudo -->
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="14" cy="14" r="4" />
+                    <path d="M14 7v2.2M14 18.8V21M7 14h2.2M18.8 14H21" />
+                    <path d="M9.4 9.4l1.5 1.5M17.1 17.1l1.5 1.5M9.4 18.6l1.5-1.5M17.1 10.9l1.5-1.5" />
+                    <path d="M23 11.5l6 2.2v6.3c0 3-2.2 5.8-6 7.5-3.8-1.7-6-4.5-6-7.5v-6.3l6-2.2z" />
+                    <path d="M21.5 19.5l2.1 2.1 3.4-3.6" />
+                  </g>
+                </svg>
+              </div>
+              <div class="card-label">
+                <span class="lang lang-en">Operational Level</span>
+                <span class="lang lang-es">Nivel operativo</span>
+              </div>
+              <h3 class="card-title">
+                <span class="lang lang-en">Mechanical &amp; Operational Risk Management</span>
+                <span class="lang lang-es">Gestión del riesgo mecánico y operativo</span>
+              </h3>
+              <ul>
+                <li>
                   <span class="lang lang-en">
-                    Technical evaluation of equipment, tasks and physical conditions to prevent failures and injuries.
+                    Identification of mechanical hazards in equipment, tools and processes.
                   </span>
                   <span class="lang lang-es">
-                    Evaluación técnica de equipos, tareas y condiciones físicas para prevenir fallas mecánicas y lesiones.
+                    Identificación de peligros mecánicos en equipos, herramientas y procesos.
                   </span>
-                </p>
-                <ul>
-                  <li>
-                    <span class="lang lang-en">Baseline of mechanical risk in machines and tools.</span>
-                    <span class="lang lang-es">Línea basal de riesgo mecánico en máquinas y herramientas.</span>
-                  </li>
-                  <li>
-                    <span class="lang lang-en">Hazardous energies and LOTO implementation.</span>
-                    <span class="lang lang-es">Gestión de energías peligrosas e implementación de LOTO.</span>
-                  </li>
-                  <li>
-                    <span class="lang lang-en">EPP definition for impact, cuts and entrapment.</span>
-                    <span class="lang lang-es">Definición de EPP frente a impacto, corte y atrapamiento.</span>
-                  </li>
-                </ul>
-                <div class="card-footer">
-                  <button class="card-more" type="button" onclick="openSubpage('mechanical')">
-                    <span class="lang lang-es">Leer +</span>
-                    <span class="lang lang-en">Learn more</span>
-                  </button>
-                </div>
-              </div>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Assessment of physical and environmental conditions that affect safe work.
+                  </span>
+                  <span class="lang lang-es">
+                    Evaluación de condiciones físicas y ambientales que afectan la seguridad operativa.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Verification of guards, interlocks, emergency stops and engineering controls.
+                  </span>
+                  <span class="lang lang-es">
+                    Verificación de resguardos, enclavamientos, paros de emergencia y controles de ingeniería.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Implementation and audit of lockout/tagout (LOTO) for hazardous energies.
+                  </span>
+                  <span class="lang lang-es">
+                    Implementación y auditoría de bloqueo y etiquetado de energías peligrosas (LOTO).
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Operational inspections and risk-based action plans in field operations.
+                  </span>
+                  <span class="lang lang-es">
+                    Inspecciones operativas y planes de acción priorizados por riesgo en la operación en campo.
+                  </span>
+                </li>
+              </ul>
             </article>
 
-            <!-- TARJETA 3 – Capacitación técnica -->
+            <!-- TARJETA 3 — Emergencias y derrames -->
             <article class="card">
-              <div class="card-photo card-photo-training"><!-- FOTO L-D (placeholder) --></div>
-              <div class="card-body">
-                <div class="card-label">
-                  <span class="lang lang-en">Capability Building</span>
-                  <span class="lang lang-es">Desarrollo de capacidades</span>
-                </div>
-                <h3 class="card-title">
-                  <span class="lang lang-en">Technical Training Programs</span>
-                  <span class="lang lang-es">Capacitación técnica especializada</span>
-                </h3>
-                <p class="card-intro">
+              <div class="card-icon" aria-hidden="true">
+                <!-- Icono triángulo + gota / derrame -->
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" stroke="#00b894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 27.5 18.5 9a1.6 1.6 0 0 1 2.8 0L31.8 27.5a1.6 1.6 0 0 1-1.4 2.4H9.4A1.6 1.6 0 0 1 8 27.5z" />
+                    <path d="M20 16v6" />
+                    <circle cx="20" cy="25" r="1.2" />
+                    <path d="M26.5 14.5c1.8 1.7 3 3.7 3 5.7a4.3 4.3 0 0 1-8.6 0c0-2 1.2-4 3-5.7l1.3-1.3z" />
+                  </g>
+                </svg>
+              </div>
+              <div class="card-label">
+                <span class="lang lang-en">Incident Readiness</span>
+                <span class="lang lang-es">Preparación ante incidentes</span>
+              </div>
+              <h3 class="card-title">
+                <span class="lang lang-en">Emergency, Spill &amp; Process Event Response</span>
+                <span class="lang lang-es">Respuesta a emergencias, derrames y fallas operacionales</span>
+              </h3>
+              <ul>
+                <li>
                   <span class="lang lang-en">
-                    Applied training on chemical, mechanical and emergency risk, aligned with real field scenarios.
+                    Review and update of emergency plans for chemical, mechanical and process scenarios.
                   </span>
                   <span class="lang lang-es">
-                    Formación aplicada en riesgo químico, mecánico y emergencias, alineada con escenarios reales de campo.
+                    Revisión y actualización de planes de emergencia para escenarios químicos, mecánicos y de proceso.
                   </span>
-                </p>
-                <ul>
-                  <li>
-                    <span class="lang lang-en">GHS, SDS interpretation and chemical risk.</span>
-                    <span class="lang lang-es">SGA, lectura de FDS y gestión del riesgo químico.</span>
-                  </li>
-                  <li>
-                    <span class="lang lang-en">Mechanical hazards and safe operation.</span>
-                    <span class="lang lang-es">Peligros mecánicos y operación segura.</span>
-                  </li>
-                  <li>
-                    <span class="lang lang-en">Spill response and emergency drills.</span>
-                    <span class="lang lang-es">Respuesta a derrames y simulacros de emergencia.</span>
-                  </li>
-                </ul>
-                <div class="card-footer">
-                  <button class="card-more" type="button" onclick="openSubpage('training')">
-                    <span class="lang lang-es">Leer +</span>
-                    <span class="lang lang-en">Learn more</span>
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <!-- TARJETA 4 – Emergencias y derrames -->
-            <article class="card">
-              <div class="card-photo card-photo-emergency"><!-- FOTO L-D (placeholder) --></div>
-              <div class="card-body">
-                <div class="card-label">
-                  <span class="lang lang-en">Incident Readiness</span>
-                  <span class="lang lang-es">Preparación ante incidentes</span>
-                </div>
-                <h3 class="card-title">
-                  <span class="lang lang-en">Emergency &amp; Spill Response</span>
-                  <span class="lang lang-es">Respuesta a emergencias y derrames</span>
-                </h3>
-                <p class="card-intro">
+                </li>
+                <li>
                   <span class="lang lang-en">
-                    Procedures, spill kits and drills to strengthen operational response and recovery.
+                    Design of spill response procedures, guides and incident activation checklists.
                   </span>
                   <span class="lang lang-es">
-                    Procedimientos, kits de derrames y simulacros para fortalecer la respuesta operativa y la recuperación.
+                    Diseño de procedimientos de atención de derrames, guías rápidas y listas de activación.
                   </span>
-                </p>
-                <ul>
-                  <li>
-                    <span class="lang lang-en">Review of emergency and contingency plans.</span>
-                    <span class="lang lang-es">Revisión de planes de emergencia y contingencia.</span>
-                  </li>
-                  <li>
-                    <span class="lang lang-en">Spill response procedures and quick guides.</span>
-                    <span class="lang lang-es">Procedimientos de atención de derrames y guías rápidas.</span>
-                  </li>
-                  <li>
-                    <span class="lang lang-en">Post-incident analysis and corrective actions.</span>
-                    <span class="lang lang-es">Análisis post-incidente y acciones correctivas.</span>
-                  </li>
-                </ul>
-                <div class="card-footer">
-                  <button class="card-more" type="button" onclick="openSubpage('emergency')">
-                    <span class="lang lang-es">Leer +</span>
-                    <span class="lang lang-en">Learn more</span>
-                  </button>
-                </div>
-              </div>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Evaluation of spill kits, specialized PPE, routes and response times.
+                  </span>
+                  <span class="lang lang-es">
+                    Evaluación de kits de derrames, EPP especializado, rutas y tiempos de respuesta.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Drills, training for emergency teams and post-incident analysis.
+                  </span>
+                  <span class="lang lang-es">
+                    Simulacros, entrenamiento a brigadas y análisis post-incidente.
+                  </span>
+                </li>
+                <li>
+                  <span class="lang lang-en">
+                    Corrective and preventive actions integrated into both risk lines (chemical and mechanical).
+                  </span>
+                  <span class="lang lang-es">
+                    Acciones correctivas y preventivas integradas a las dos líneas de riesgo (químico y mecánico).
+                  </span>
+                </li>
+              </ul>
             </article>
           </div>
         </div>
@@ -1164,7 +1151,7 @@
             </div>
             <h2 class="section-title">
               <span class="lang lang-en">
-                A technical practice adapted to different field realities
+                A technical practice adapted to different realities in the field
               </span>
               <span class="lang lang-es">
                 Una práctica de consultoría adaptada a diferentes realidades en campo
@@ -1321,7 +1308,7 @@
               <p class="contact-text">
                 <span class="lang lang-en">
                   To request a technical assessment, discuss a specific project or
-                  explore collaboration with an insurer or institutional partner, please
+                  explore collaboration with an ARL or institutional partner, please
                   reach out using the contact details below.
                 </span>
                 <span class="lang lang-es">
@@ -1407,7 +1394,7 @@
       </section>
     </main>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- ========== FOOTER PRINCIPAL ========== -->
     <footer>
       <span class="lang lang-en">
         AV Risk Engineering © 2025 – Occupational &amp; Chemical Risk Engineering
@@ -1418,380 +1405,98 @@
         • Consultoría en seguridad de procesos y riesgo ocupacional
       </span>
     </footer>
+
+    <!-- ========== SUBPÁGINA: GESTIÓN DEL RIESGO QUÍMICO ========== -->
+    <section id="sub-chemical-risk" class="subpage-section">
+      <div class="subpage-inner">
+        <h2 class="subpage-title">
+          <span class="lang lang-es">Gestión del riesgo químico</span>
+          <span class="lang lang-en">Chemical Risk Management</span>
+        </h2>
+
+        <p class="subpage-subtitle">
+          <span class="lang lang-es">
+            Una mirada integrada que conecta la exposición química con la salud ocupacional,
+            la seguridad de procesos y la protección ambiental.
+          </span>
+          <span class="lang lang-en">
+            An integrated approach that links chemical exposure with occupational health,
+            process safety and environmental protection.
+          </span>
+        </p>
+
+        <div class="subpage-layout">
+          <!-- TEXTO -->
+          <div class="subpage-text">
+            <p>
+              <span class="lang lang-es">
+                La operación de aspersión asistida por dron con énfasis en control de la exposición,
+                ventilación natural y uso adecuado de EPP permite reducir la deriva, mejorar la
+                trazabilidad del producto y minimizar la exposición dérmica e inhalatoria.
+              </span>
+              <span class="lang lang-en">
+                Drone-assisted spraying operations with proper exposure control, natural ventilation
+                and adequate PPE help reduce drift, improve product traceability and minimize dermal
+                and inhalation exposure.
+              </span>
+            </p>
+
+            <p>
+              <span class="lang lang-es">
+                A partir de matrices de exposición, mapas de riesgo por tarea y revisión de fichas
+                de datos de seguridad, es posible establecer criterios de selección de tecnologías
+                de aspersión, selección de EPP, procedimientos de mezcla y carga, y protocolos de
+                limpieza y disposición de envases que mantengan la operación dentro de límites de
+                exposición aceptables.
+              </span>
+              <span class="lang lang-en">
+                Using exposure matrices, task-based risk maps and SDS review, it is possible to define
+                criteria for spray technology selection, PPE selection, mixing and loading procedures,
+                and container cleaning and disposal protocols that keep operations within acceptable
+                exposure limits.
+              </span>
+            </p>
+
+            <p>
+              <span class="lang lang-es">
+                La articulación con el SG-SST y los requisitos ambientales asegura que las decisiones
+                técnicas sobre productos, equipos de aplicación y prácticas de trabajo se traduzcan en
+                controles verificables, medibles y auditables en campo.
+              </span>
+              <span class="lang lang-en">
+                Alignment with OSH management systems and environmental requirements ensures that
+                technical decisions on products, application equipment and work practices become
+                controls that are verifiable, measurable and auditable in the field.
+              </span>
+            </p>
+          </div>
+
+          <!-- IMAGEN -->
+          <figure class="subpage-image">
+            <img
+              src="chemical-risk-drone-operator.jpg"
+              alt="Operación segura de aspersión con dron — protección respiratoria y monitoreo digital"
+            />
+            <figcaption class="subpage-caption">
+              <span class="lang lang-es">
+                Operación de aspersión asistida con dron con protección respiratoria y monitoreo digital del proceso.
+              </span>
+              <span class="lang lang-en">
+                Drone-assisted spraying operation with respiratory protection and digital monitoring of the process.
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="subpage-actions">
+          <button class="back-btn" onclick="returnHome()">
+            <span class="lang lang-es">Volver al inicio</span>
+            <span class="lang lang-en">Return to home</span>
+          </button>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <!-- ========== SUBPÁGINAS ========== -->
-
-  <!-- SUBPÁGINA 1 – GESTIÓN DEL RIESGO QUÍMICO -->
-  <section id="sub-chemical" class="subpage-section">
-    <div class="subpage-inner">
-      <h2 class="subpage-title">
-        <span class="lang lang-es">Gestión del riesgo químico</span>
-        <span class="lang lang-en">Chemical Risk Management</span>
-      </h2>
-      <p class="subpage-subtitle">
-        <span class="lang lang-es">
-          Servicio de ingeniería que integra control de exposición, compatibilidad, seguridad de procesos
-          y cumplimiento normativo en operaciones con sustancias químicas.
-        </span>
-        <span class="lang lang-en">
-          Engineering service integrating exposure control, compatibility, process safety and regulatory
-          compliance in operations involving chemicals.
-        </span>
-      </p>
-
-      <div class="subpage-layout">
-        <div class="subpage-text">
-          <p>
-            <span class="lang lang-es">
-              La línea basal del riesgo químico permite conocer el estado real de gestión en planta:
-              inventario de sustancias, clasificación bajo SGA / ONU, revisión de controles existentes
-              y brechas frente a los requisitos del SG-SST y de las autoridades ambientales y laborales.
-            </span>
-            <span class="lang lang-en">
-              The chemical risk baseline provides a realistic picture of plant conditions:
-              chemical inventory, GHS / UN classification, review of existing controls and gaps
-              against OSH management system and environmental / labor regulations.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              Se desarrollan evaluaciones cualitativas de exposición por inhalación, considerando
-              volatilidad, temperatura, ventilación, frecuencia y duración de las tareas. Estos análisis
-              permiten priorizar sustancias y escenarios críticos antes de avanzar a mediciones higiénicas
-              especializadas.
-            </span>
-            <span class="lang lang-en">
-              Qualitative evaluations of inhalation exposure are performed considering volatility,
-              temperature, ventilation, task frequency and duration. This enables prioritization of
-              critical substances and scenarios before moving to specialized hygiene measurements.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              Cuando se requiere, se planifican y ejecutan mediciones higiénicas (personales o ambientales),
-              interpretadas frente a límites de exposición ocupacional (TLV-TWA, STEL u otros valores de
-              referencia), generando recomendaciones técnicas para ventilación, encapsulamiento o reducción
-              de tiempos de exposición.
-            </span>
-            <span class="lang lang-en">
-              When needed, personal or area sampling campaigns are planned and executed, interpreted against
-              occupational exposure limits (TLV-TWA, STEL or other references), generating technical
-              recommendations on ventilation, enclosure or exposure time reduction.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              Se diseñan y elaboran Fichas de Datos de Seguridad (FDS) completas bajo el Sistema Globalmente
-              Armonizado, asegurando coherencia en clasificación de peligros, frases H y P, pictogramas,
-              medidas de control, transporte y referencias normativas.
-            </span>
-            <span class="lang lang-en">
-              Full Safety Data Sheets (SDS) are designed and prepared under GHS, ensuring consistent hazard
-              classification, H and P statements, pictograms, control measures, transport information and
-              regulatory references.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              Finalmente, se establecen criterios de compatibilidad y almacenamiento, segregación por clases
-              de peligro, sistemas de contención y rutas internas, junto con la evaluación y determinación
-              técnica de los EPP requeridos para cada tarea y sustancia.
-            </span>
-            <span class="lang lang-en">
-              Finally, compatibility and storage criteria are defined, including segregation by hazard class,
-              containment systems and internal routes, together with the technical evaluation and selection
-              of required PPE for each task and substance.
-            </span>
-          </p>
-        </div>
-
-        <div class="subpage-photo subpage-photo-chemical">
-          <!-- Aquí luego irá la foto del dron / operador -->
-          <span class="subpage-photo-note lang lang-es">Espacio reservado para fotografía técnica de aspersión química.</span>
-          <span class="subpage-photo-note lang lang-en">Placeholder for technical photo of chemical spraying.</span>
-        </div>
-      </div>
-
-      <div class="subpage-actions">
-        <button class="back-btn" type="button" onclick="returnHome()">
-          <span class="lang lang-es">Volver al inicio</span>
-          <span class="lang lang-en">Return to home</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUBPÁGINA 2 – RIESGO MECÁNICO Y OPERATIVO -->
-  <section id="sub-mechanical" class="subpage-section">
-    <div class="subpage-inner">
-      <h2 class="subpage-title">
-        <span class="lang lang-es">Riesgo mecánico y operativo</span>
-        <span class="lang lang-en">Mechanical &amp; Operational Risk</span>
-      </h2>
-      <p class="subpage-subtitle">
-        <span class="lang lang-es">
-          Evaluación técnica de equipos, herramientas, líneas de proceso y condiciones físicas para controlar
-          peligros mecánicos y energías peligrosas.
-        </span>
-        <span class="lang lang-en">
-          Technical assessment of equipment, tools, process lines and physical conditions to control mechanical
-          hazards and hazardous energies.
-        </span>
-      </p>
-
-      <div class="subpage-layout">
-        <div class="subpage-text">
-          <p>
-            <span class="lang lang-es">
-              La línea basal del riesgo mecánico identifica el estado de resguardos, enclavamientos, dispositivos
-              de paro de emergencia, protecciones y prácticas reales de operación y mantenimiento en campo.
-            </span>
-            <span class="lang lang-en">
-              The mechanical risk baseline identifies the current status of guards, interlocks, emergency stop
-              devices, protections and real operating and maintenance practices in the field.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              Se analizan las energías peligrosas presentes (eléctrica, neumática, hidráulica, mecánica,
-              gravitacional, térmica) y se verifican los puntos de liberación, aislamiento e interacción
-              con el personal.
-            </span>
-            <span class="lang lang-en">
-              Hazardous energies (electrical, pneumatic, hydraulic, mechanical, gravitational, thermal) are
-              analyzed and points of release, isolation and interaction with workers are verified.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              A partir de este diagnóstico se diseñan, ajustan o auditan los procedimientos de bloqueo y etiquetado
-              de energías peligrosas (LOTO), definiendo pasos, dispositivos, responsabilidades y verificación de
-              cero energía antes de intervenir equipos.
-            </span>
-            <span class="lang lang-en">
-              Based on this diagnosis, lockout/tagout (LOTO) procedures are designed, adjusted or audited, defining
-              steps, devices, responsibilities and zero-energy verification before intervening equipment.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              Se elaboran recomendaciones de EPP técnico para impacto, corte, atrapamiento, proyección de partículas
-              y vibración, alineadas con normas de referencia (por ejemplo EN, ANSI, ISO) y con las tareas críticas
-              identificadas.
-            </span>
-            <span class="lang lang-en">
-              Technical PPE recommendations are issued for impact, cuts, entrapment, flying particles and vibration,
-              aligned with reference standards (EN, ANSI, ISO) and with the critical tasks identified.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              El servicio puede complementarse con la elaboración de procedimientos operativos seguros, instructivos
-              gráficos y listas de verificación para inspecciones periódicas de equipos y áreas.
-            </span>
-            <span class="lang lang-en">
-              The service can be complemented with safe operating procedures, graphical work instructions and
-              checklists for periodic inspections of equipment and areas.
-            </span>
-          </p>
-        </div>
-
-        <div class="subpage-photo subpage-photo-mechanical">
-          <!-- Foto futura: maquinaria / resguardos -->
-          <span class="subpage-photo-note lang lang-es">Espacio reservado para fotografía de máquinas y resguardos.</span>
-          <span class="subpage-photo-note lang lang-en">Placeholder for machinery / guarding photo.</span>
-        </div>
-      </div>
-
-      <div class="subpage-actions">
-        <button class="back-btn" type="button" onclick="returnHome()">
-          <span class="lang lang-es">Volver al inicio</span>
-          <span class="lang lang-en">Return to home</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUBPÁGINA 3 – CAPACITACIÓN TÉCNICA -->
-  <section id="sub-training" class="subpage-section">
-    <div class="subpage-inner">
-      <h2 class="subpage-title">
-        <span class="lang lang-es">Capacitación técnica especializada</span>
-        <span class="lang lang-en">Technical Training Programs</span>
-      </h2>
-      <p class="subpage-subtitle">
-        <span class="lang lang-es">
-          Programas de formación diseñados desde la ingeniería de riesgos, con énfasis en aplicación práctica,
-          casos reales y transferencia efectiva al trabajo diario.
-        </span>
-        <span class="lang lang-en">
-          Training programs designed from a risk engineering perspective, focused on practical application,
-          real cases and effective transfer to daily work.
-        </span>
-      </p>
-
-      <div class="subpage-layout">
-        <div class="subpage-text">
-          <p>
-            <span class="lang lang-es">
-              En riesgo químico se abordan conceptos de exposición, vías de ingreso, efectos en la salud y
-              controles, integrando el Sistema Globalmente Armonizado (SGA), interpretación de FDS y
-              etiquetado, así como criterios básicos de compatibilidad y almacenamiento.
-            </span>
-            <span class="lang lang-en">
-              Chemical risk modules cover exposure concepts, routes of entry, health effects and controls,
-              integrating the Globally Harmonized System (GHS), SDS interpretation and labeling, plus basic
-              criteria for compatibility and storage.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              En riesgo mecánico se trabaja la identificación de peligros en máquinas y herramientas, zonas de
-              atrapamiento, uso seguro de resguardos, dispositivos de parada de emergencia y los principios
-              de bloqueo y etiquetado de energías peligrosas.
-            </span>
-            <span class="lang lang-en">
-              Mechanical risk modules focus on identifying hazards in machines and tools, entrapment zones,
-              safe use of guards, emergency stop devices and the principles of lockout/tagout of hazardous
-              energies.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              En emergencias y derrames se desarrollan contenidos sobre reconocimiento temprano de eventos,
-              activación del sistema de respuesta, uso de kits de derrames, control inicial y comunicación
-              interna, complementados con simulaciones o talleres prácticos.
-            </span>
-            <span class="lang lang-en">
-              Emergency and spill modules address early recognition of events, activation of the response system,
-              use of spill kits, initial control and internal communication, complemented with simulations or
-              practical workshops.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              La formación puede impartirse en modalidad presencial en campo, virtual sincrónica o modelos híbridos,
-              adaptando la profundidad técnica al rol de los asistentes (operarios, supervisores, responsables SG-SST
-              o equipos directivos).
-            </span>
-            <span class="lang lang-en">
-              Training can be delivered on-site, via live virtual sessions or in hybrid formats, adjusting technical
-              depth to the role of participants (operators, supervisors, OSH managers or management teams).
-            </span>
-          </p>
-        </div>
-
-        <div class="subpage-photo subpage-photo-training">
-          <!-- Foto futura: capacitación / grupo en campo -->
-          <span class="subpage-photo-note lang lang-es">Espacio reservado para fotografía de capacitación en campo.</span>
-          <span class="subpage-photo-note lang lang-en">Placeholder for training / field session photo.</span>
-        </div>
-      </div>
-
-      <div class="subpage-actions">
-        <button class="back-btn" type="button" onclick="returnHome()">
-          <span class="lang lang-es">Volver al inicio</span>
-          <span class="lang lang-en">Return to home</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUBPÁGINA 4 – EMERGENCIAS Y DERRAMES -->
-  <section id="sub-emergency" class="subpage-section">
-    <div class="subpage-inner">
-      <h2 class="subpage-title">
-        <span class="lang lang-es">Respuesta a emergencias y derrames</span>
-        <span class="lang lang-en">Emergency &amp; Spill Response</span>
-      </h2>
-      <p class="subpage-subtitle">
-        <span class="lang lang-es">
-          Acompañamiento para fortalecer la preparación, atención y análisis de eventos químicos, mecánicos
-          y de proceso, integrando procedimientos, recursos y entrenamiento.
-        </span>
-        <span class="lang lang-en">
-          Support to strengthen preparedness, response and analysis of chemical, mechanical and process events,
-          integrating procedures, resources and training.
-        </span>
-      </p>
-
-      <div class="subpage-layout">
-        <div class="subpage-text">
-          <p>
-            <span class="lang lang-es">
-              Se revisan y ajustan planes de emergencia, procedimientos específicos para escenarios con sustancias
-              peligrosas, fallas de equipos, liberaciones de energía y eventos de transporte o almacenamiento.
-            </span>
-            <span class="lang lang-en">
-              Emergency plans and specific procedures are reviewed and updated for scenarios involving hazardous
-              substances, equipment failures, energy releases and storage or transport events.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              Se diseñan protocolos de atención de derrames, guías rápidas y listas de chequeo para la activación
-              del sistema de respuesta, definiendo roles, zonas seguras, rutas de evacuación, comunicación y
-              coordinación con brigadas o entidades externas.
-            </span>
-            <span class="lang lang-en">
-              Spill response protocols, quick guides and activation checklists are designed, defining roles, safe
-              zones, evacuation routes, communication and coordination with emergency teams or external agencies.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              El servicio incluye la evaluación de kits de derrames, EPP especializado y tiempos de respuesta, así
-              como la planificación y ejecución de simulacros o ejercicios prácticos para validar la efectividad de
-              los procedimientos.
-            </span>
-            <span class="lang lang-en">
-              The service includes evaluation of spill kits, specialized PPE and response times, as well as planning
-              and execution of drills or practical exercises to validate the effectiveness of procedures.
-            </span>
-          </p>
-
-          <p>
-            <span class="lang lang-es">
-              Posterior a un evento real se puede realizar un análisis post-incidente, identificando causas básicas
-              y contribuyentes, brechas de control y acciones correctivas y preventivas integradas al sistema de
-              gestión.
-            </span>
-            <span class="lang lang-en">
-              After a real event, post-incident analysis can be carried out to identify root and contributing causes,
-              control gaps and corrective and preventive actions integrated into the management system.
-            </span>
-          </p>
-        </div>
-
-        <div class="subpage-photo subpage-photo-emergency">
-          <!-- Foto futura: simulacro / respuesta a derrame -->
-          <span class="subpage-photo-note lang lang-es">Espacio reservado para fotografía de simulacro de emergencia.</span>
-          <span class="subpage-photo-note lang lang-en">Placeholder for emergency drill photo.</span>
-        </div>
-      </div>
-
-      <div class="subpage-actions">
-        <button class="back-btn" type="button" onclick="returnHome()">
-          <span class="lang lang-es">Volver al inicio</span>
-          <span class="lang lang-en">Return to home</span>
-        </button>
-      </div>
-    </div>
-  </section>
 
   <!-- BOTÓN FLOTANTE WHATSAPP -->
   <a
@@ -1821,53 +1526,41 @@
     <span class="lang lang-es">Escríbeme por WhatsApp</span>
   </a>
 
-  <!-- SCRIPT SUBPÁGINAS -->
+  <!-- Control de sub-página -->
   <script>
-    function openSubpage(key) {
+    function openChemicalRisk() {
       const hero   = document.querySelector("header.hero");
       const main   = document.querySelector("main");
+      const sub    = document.getElementById("sub-chemical-risk");
       const footer = document.querySelector("footer");
-      const subpages = document.querySelectorAll(".subpage-section");
-      subpages.forEach((s) => (s.style.display = "none"));
-
-      const target = document.getElementById("sub-" + key);
 
       if (hero)   hero.style.display   = "none";
       if (main)   main.style.display   = "none";
       if (footer) footer.style.display = "none";
-      if (target) target.style.display = "block";
+      if (sub)    sub.style.display    = "block";
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
 
     function returnHome() {
       const hero   = document.querySelector("header.hero");
       const main   = document.querySelector("main");
+      const sub    = document.getElementById("sub-chemical-risk");
       const footer = document.querySelector("footer");
-      const subpages = document.querySelectorAll(".subpage-section");
-      subpages.forEach((s) => (s.style.display = "none"));
 
       if (hero)   hero.style.display   = "flex";
       if (main)   main.style.display   = "block";
       if (footer) footer.style.display = "block";
+      if (sub)    sub.style.display    = "none";
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
   </script>
 
-  <!-- SCRIPT IDIOMAS -->
+  <!-- Switch de idioma -->
   <script>
     (function () {
       const body = document.body;
-      let initial = "en";
-
-      // Leemos idioma guardado, pero protegidos por try/catch
-      try {
-        const stored = localStorage.getItem("av-lang");
-        if (stored === "es" || stored === "en") {
-          initial = stored;
-        }
-      } catch (e) {
-        // Si falla localStorage, seguimos en "en" sin romper nada
-        console.warn("LocalStorage not available, using default lang 'en'");
-      }
-
+      const stored = localStorage.getItem("av-lang");
+      const initial = stored === "es" ? "es" : "en";
       body.setAttribute("data-lang", initial);
 
       const buttons = document.querySelectorAll("[data-lang-btn]");
@@ -1886,16 +1579,10 @@
 
       buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
-          const lang = btn.getAttribute("data-lang-btn") || "en";
+          const lang = btn.getAttribute("data-lang-btn");
           body.setAttribute("data-lang", lang);
+          localStorage.setItem("av-lang", lang);
           updateButtons(lang);
-
-          // Guardamos el idioma, pero sin arriesgar la ejecución
-          try {
-            localStorage.setItem("av-lang", lang);
-          } catch (e) {
-            console.warn("Could not persist language selection", e);
-          }
         });
       });
     })();
